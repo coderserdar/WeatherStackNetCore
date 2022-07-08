@@ -5,8 +5,23 @@
     <projectFile profileName="IIS Express">WeatherStackNetCore/WeatherStackNetCore.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Workspace changed">
+    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="workspace changed">
+      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/AutoComplete.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/Current.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/GeneralRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/Location.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/LocationRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Utils/CurrentWeather.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/CurrentWeather.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/refint/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/refint/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +91,7 @@
       <updated>1657261558281</updated>
       <workItem from="1657261573992" duration="5929000" />
       <workItem from="1657268328940" duration="122000" />
-      <workItem from="1657268474402" duration="275000" />
+      <workItem from="1657268474402" duration="1561000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>
@@ -99,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657268703672</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="workspace changed">
+      <created>1657268785622</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657268785622</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +143,8 @@
     <MESSAGE value="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown" />
     <MESSAGE value="git ignore file has been created" />
     <MESSAGE value="Workspace changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Workspace changed" />
+    <MESSAGE value="workspace changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
