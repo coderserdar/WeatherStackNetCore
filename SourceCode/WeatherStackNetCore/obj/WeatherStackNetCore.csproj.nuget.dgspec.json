@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\serda\\Documents\\Rider Projects\\WeatherStackNetCore\\WeatherStackNetCore\\WeatherStackNetCore.csproj": {}
+    "C:\\Users\\serda\\Documents\\GitHub\\WeatherStackNetCore\\SourceCode\\WeatherStackNetCore\\WeatherStackNetCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\serda\\Documents\\Rider Projects\\WeatherStackNetCore\\WeatherStackNetCore\\WeatherStackNetCore.csproj": {
+    "C:\\Users\\serda\\Documents\\GitHub\\WeatherStackNetCore\\SourceCode\\WeatherStackNetCore\\WeatherStackNetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\serda\\Documents\\Rider Projects\\WeatherStackNetCore\\WeatherStackNetCore\\WeatherStackNetCore.csproj",
+        "projectUniqueName": "C:\\Users\\serda\\Documents\\GitHub\\WeatherStackNetCore\\SourceCode\\WeatherStackNetCore\\WeatherStackNetCore.csproj",
         "projectName": "WeatherStackNetCore",
-        "projectPath": "C:\\Users\\serda\\Documents\\Rider Projects\\WeatherStackNetCore\\WeatherStackNetCore\\WeatherStackNetCore.csproj",
+        "projectPath": "C:\\Users\\serda\\Documents\\GitHub\\WeatherStackNetCore\\SourceCode\\WeatherStackNetCore\\WeatherStackNetCore.csproj",
         "packagesPath": "C:\\Users\\serda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\serda\\Documents\\Rider Projects\\WeatherStackNetCore\\WeatherStackNetCore\\obj\\",
+        "outputPath": "C:\\Users\\serda\\Documents\\GitHub\\WeatherStackNetCore\\SourceCode\\WeatherStackNetCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

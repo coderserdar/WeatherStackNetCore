@@ -28,3 +28,33 @@ C:\Users\serda\Documents\Rider Projects\WeatherStackNetCore\WeatherStackNetCore\
 C:\Users\serda\Documents\Rider Projects\WeatherStackNetCore\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.pdb
 C:\Users\serda\Documents\Rider Projects\WeatherStackNetCore\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.genruntimeconfig.cache
 C:\Users\serda\Documents\Rider Projects\WeatherStackNetCore\WeatherStackNetCore\obj\Debug\net6.0\ref\WeatherStackNetCore.dll
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\appsettings.json
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\WeatherStackNetCore.staticwebassets.runtime.json
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\WeatherStackNetCore.exe
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\WeatherStackNetCore.deps.json
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\WeatherStackNetCore.runtimeconfig.json
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\WeatherStackNetCore.dll
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\WeatherStackNetCore.pdb
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\Extensions.System.Text.Json.dll
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.csproj.AssemblyReference.cache
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.AssemblyInfoInputs.cache
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.AssemblyInfo.cs
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.csproj.CoreCompileInputs.cache
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.RazorAssemblyInfo.cache
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.RazorAssemblyInfo.cs
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\scopedcss\bundle\WeatherStackNetCore.styles.css
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\scopedcss\projectbundle\WeatherStackNetCore.bundle.scp.css
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.csproj.CopyComplete
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.dll
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\refint\WeatherStackNetCore.dll
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.pdb
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.genruntimeconfig.cache
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\ref\WeatherStackNetCore.dll
