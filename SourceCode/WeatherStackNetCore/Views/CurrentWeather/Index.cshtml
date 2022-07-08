@@ -1,0 +1,164 @@
+﻿@model WeatherStackNetCore.Models.CurrentWeatherViewModel
+@{
+    ViewData["Title"] = "Current Weather Page";
+    ViewBag.Header = "Current Weather Page";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+}
+
+<script>
+   function CleanForm()
+   {
+      document.getElementById('CurrentWeather').reset();
+   }
+</script>
+
+<script>
+   $(function () {
+      $("#btnSearch").click(function () {
+            $.ajax({
+                 type: "POST",
+                 url: "/CurrentWeather/GetCurrentWeather",
+                 data: { "query": $("#txtPlaceName").val(), "unit": $("#drpUnitList").val(),"language": $("#drpLanguageList").val(),},
+                 success: function (response) {
+                     if (response != null)
+                     {
+                         if (response.location != null)
+                             {
+                                 alert("Name: " + response.location.name + ", Country: " + response.location.country + ", Region: " + response.location.region + ", Temparature: " + response.current.temperature);
+                                 // buildHtmlTable(response, '#resultTable');
+                                 // AddTable(response);
+                                 // alert("Name: " + response.location.name + ", Country: " + response.location.country + ", Region: " + response.location.region + ", Temparature: " + response.current.temperature);
+                             }
+                     }
+                 },
+                 failure: function (response) {
+                    alert(response.responseText);
+                 },
+                 error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+      });
+  });
+</script>
+
+<script>
+    // Builds the HTML Table out of myList.
+    function buildHtmlTable(data, selector) {
+      var columns = addAllColumnHeaders(data, selector);
+    
+      for (var i = 0; i < data.length; i++) {
+        var row$ = $('<tr/>');
+        for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+          var cellValue = myList[i][columns[colIndex]];
+          if (cellValue == null) cellValue = "";
+          row$.append($('<td/>').html(cellValue));
+        }
+        $(selector).append(row$);
+      }
+    }
+    
+    // Adds a header row to the table and returns the set of columns.
+    // Need to do union of keys from all records as some records may not contain
+    // all records.
+    function addAllColumnHeaders(data, selector) {
+      var columnSet = [];
+      var headerTr$ = $('<tr/>');
+    
+      for (var i = 0; i < data.length; i++) {
+        var rowHash = data[i];
+        for (var key in rowHash) {
+          if ($.inArray(key, columnSet) == -1) {
+            columnSet.push(key);
+            headerTr$.append($('<th/>').html(key));
+          }
+        }
+      }
+      $(selector).append(headerTr$);
+    
+      return columnSet;
+    }
+
+    function AddTable(data)
+    {
+        var table = $('<table></table>').addClass('w3-striped');
+        var row = $('<tr></tr>');
+        for (i = 0; i < 10; i++) {
+            
+            for (i = 0; i < 10; i++) {
+                var row1 = $('<td></td>').addClass('bar').text('result ' + i);
+                table.append(row);
+                row.append(row1);
+            }
+        }
+        $('#divSonuc').append(table);
+    }   
+</script>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Current Weather</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+<form asp-action="Index" method="post" class="form-control" style="align-content: center" id="CurrentWeather">
+    <h5 class="bg-primary text-white text-center m-2 p-2">@ViewBag.Header</h5>
+    @* <div asp-validation-summary="All"></div> *@
+    <div class="row m-1">
+        <div class="col-2">
+            <label asp-for="PlaceName" class="form-label">@Model.PlaceName</label>
+        </div>
+        <div class="col-4">
+            <input asp-for="PlaceName" class="form-control" id="txtPlaceName"/>
+        </div>
+        <div class="col-4">
+            <span asp-validation-for="PlaceName" class="text-danger" style="font-weight: bold"></span>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-2">
+            <label asp-for="Unit" class="form-label">@Model.Unit</label>
+        </div>
+        <div class="col-4">
+            <select id="drpUnitList" class="form-control" asp-for="Unit" asp-items="@(new SelectList(Model.UnitList, "Value", "Text"))">
+                <option value="">--Select--</option>
+            </select>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-2">
+            <label asp-for="Language" class="form-label">@Model.Language</label>
+        </div>
+        <div class="col-4">
+            <select id="drpLanguageList" class="form-control" asp-for="Language" asp-items="@(new SelectList(Model.LanguageList, "Value", "Text"))">
+                <option value="">--Select--</option>
+            </select>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-10"></div>
+        <div class="col-1">
+            <button type="button" class="btn btn-danger" onclick="CleanForm()">Clean</button>
+        </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
+        </div>
+    </div>
+</form>
+<form>
+    <div id="divSonuc">
+        <table id="resultTable"></table>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewBag.Header = "Home Page";
+}
+
+<h1 align="center">@ViewBag.Header</h1>
+<br/>
+<br/>
+<table>
+    <tr>
+        <td>
+            <a asp-controller="CurrentWeather" asp-action="Index"><button class="btn btn-primary">Current Weather</button></a>
+        </td>
+    </tr>
+</table>

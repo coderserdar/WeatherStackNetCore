@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "s44653DBtW/i1Ac+eoYhXg0ET8XMg1BHm4pzw/PTFTBQSo6qYXB19V6hWUr75SAgbtpka0JcW3lAoY18u1sBtg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\serda\\Documents\\Rider Projects\\WeatherStackNetCore\\WeatherStackNetCore\\WeatherStackNetCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\serda\\.nuget\\packages\\extensions.system.text.json\\6.0.5\\extensions.system.text.json.6.0.5.nupkg.sha512",
+    "C:\\Users\\serda\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta1\\newtonsoft.json.13.0.2-beta1.nupkg.sha512",
+    "C:\\Users\\serda\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\serda\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\serda\\.nuget\\packages\\system.text.json\\6.0.5\\system.text.json.6.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
