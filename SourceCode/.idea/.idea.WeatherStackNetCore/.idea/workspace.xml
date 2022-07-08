@@ -5,7 +5,9 @@
     <projectFile profileName="IIS Express">WeatherStackNetCore/WeatherStackNetCore.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="git ignore file has been created" />
+    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Workspace changed">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +76,7 @@
       <updated>1657261558281</updated>
       <workItem from="1657261573992" duration="5929000" />
       <workItem from="1657268328940" duration="122000" />
-      <workItem from="1657268474402" duration="173000" />
+      <workItem from="1657268474402" duration="275000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>
@@ -90,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657268599590</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Workspace changed">
+      <created>1657268703672</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657268703672</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,7 +120,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown" />
     <MESSAGE value="git ignore file has been created" />
-    <option name="LAST_COMMIT_MESSAGE" value="git ignore file has been created" />
+    <MESSAGE value="Workspace changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
