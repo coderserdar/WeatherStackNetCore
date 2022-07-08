@@ -2,6 +2,9 @@
 
 namespace WeatherStackNetCore.Utils;
 
+/// <summary>
+/// API Request Class
+/// </summary>
 public class Request
 {
     public string type { get; set; }
@@ -10,6 +13,9 @@ public class Request
     public string unit { get; set; }
 }
 
+/// <summary>
+/// Query Place Detailed Location Info Class
+/// </summary>
 public class Location
 {
     public string name { get; set; }
@@ -23,6 +29,9 @@ public class Location
     public string utc_offset { get; set; }
 }
 
+/// <summary>
+/// Query Place Current Weather Information Class
+/// </summary>
 public class Current
 {
     public string observation_time { get; set; }
@@ -42,6 +51,9 @@ public class Current
     public decimal visibility { get; set; }
 }
 
+/// <summary>
+/// API Request Result Class
+/// </summary>
 public class CurrentWeather
 {
     public Request request { get; set; }

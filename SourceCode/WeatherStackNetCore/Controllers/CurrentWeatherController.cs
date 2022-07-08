@@ -44,24 +44,31 @@ public class CurrentWeatherController : Controller
     [HttpPost]
     public async Task<CurrentWeather?> GetCurrentWeather(string query, string unit, string language)
     {
-        var apiKey = configuration.GetValue<string>("API_Key"); 
+        try
+        {
+            var apiKey = configuration.GetValue<string>("API_Key"); 
         
-        var httpClient = new HttpClient();
-        httpClient.Timeout = new TimeSpan(0, 0, 30);
+            var httpClient = new HttpClient();
+            httpClient.Timeout = new TimeSpan(0, 0, 30);
         
-        var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={query}";
-        if (!string.IsNullOrEmpty(unit))
-            requestString += $"&unit={unit}";
-        if (!string.IsNullOrEmpty(language))
-            requestString += $"&language={language}";
+            var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={query}";
+            if (!string.IsNullOrEmpty(unit))
+                requestString += $"&unit={unit}";
+            if (!string.IsNullOrEmpty(language))
+                requestString += $"&language={language}";
         
-        var response = await httpClient.GetAsync(requestString);
-        var result = await response.Content.ReadAsStringAsync();
+            var response = await httpClient.GetAsync(requestString);
+            var result = await response.Content.ReadAsStringAsync();
 
-        var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
-        var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-        var currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
+            var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
+            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+            var currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
 
-        return currentWeather;
+            return currentWeather;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 }
