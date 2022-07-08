@@ -5,24 +5,16 @@
     <projectFile profileName="IIS Express">WeatherStackNetCore/WeatherStackNetCore.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Utils/CurrentWeather.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/CurrentWeather.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" afterDir="false" />
-    </list>
+    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="git ignore file has been created" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Utils/CurrentWeather.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/CurrentWeather/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,7 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WeatherStackNetCore: IIS Express">
@@ -82,14 +74,44 @@
       <updated>1657261558281</updated>
       <workItem from="1657261573992" duration="5929000" />
       <workItem from="1657268328940" duration="122000" />
+      <workItem from="1657268474402" duration="173000" />
     </task>
+    <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
+      <created>1657268562601</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657268562601</updated>
+    </task>
+    <task id="LOCAL-00002" summary="git ignore file has been created">
+      <created>1657268599590</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657268599590</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown" />
+    <MESSAGE value="git ignore file has been created" />
+    <option name="LAST_COMMIT_MESSAGE" value="git ignore file has been created" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
