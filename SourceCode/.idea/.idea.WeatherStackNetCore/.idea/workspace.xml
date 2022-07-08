@@ -5,25 +5,7 @@
     <projectFile profileName="IIS Express">WeatherStackNetCore/WeatherStackNetCore.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="some classes has been added">
-      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/AutoCompleteController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Models/AutoCompleteViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/Error.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/ErrorResult.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Utils/AutoComplete.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Utils/AutoComplete.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/refint/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/refint/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" afterDir="false" />
-    </list>
+    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Some files added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +13,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Utils/AutoComplete.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Utils/CurrentWeather.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/CurrentWeather/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
@@ -92,7 +75,7 @@
       <updated>1657261558281</updated>
       <workItem from="1657261573992" duration="5929000" />
       <workItem from="1657268328940" duration="122000" />
-      <workItem from="1657268474402" duration="3239000" />
+      <workItem from="1657268474402" duration="3546000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>
@@ -136,7 +119,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657271465705</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Location finder controller has been prepared and some operations have been made">
+      <created>1657273362352</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657273362352</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Some files added">
+      <created>1657273399609</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657273399609</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +158,9 @@
     <MESSAGE value="workspace changed" />
     <MESSAGE value="Some classes seperated for location finder api request" />
     <MESSAGE value="some classes has been added" />
-    <option name="LAST_COMMIT_MESSAGE" value="some classes has been added" />
+    <MESSAGE value="Location finder controller has been prepared and some operations have been made" />
+    <MESSAGE value="Some files added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some files added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

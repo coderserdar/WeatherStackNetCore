@@ -33,11 +33,26 @@
                  success: function (response) {
                      if (response != null)
                      {
-                         if (response.location != null)
+                         if (response.error === null)
                          {
-                             $("#mainTable").css('visibility','visible');
-                             FillTables(response);
-                             // alert("Name: " + response.location.name + ", Country: " + response.location.country + ", Region: " + response.location.region + ", Temparature: " + response.current.temperature);
+                              if (response.location !== null)
+                              {
+                                  $("#mainTable").css('visibility','visible');
+                                  FillTables(response);
+                              }
+                              if (response.success === "false")
+                               {
+                                  $("#errorTable").css('visibility','visible');
+                                   FillErrorTable(response);
+                               }
+                         }
+                         else
+                         {
+                               if (response.success === "false")
+                               {
+                                   $("#errorTable").css('visibility','visible');
+                                   FillErrorTable(response);
+                               }
                          }
                      }
                  },
@@ -88,6 +103,14 @@
         $("#tdFeelsLike").text(data.current.feelslike);
         $("#tdUVIndex").text(data.current.uv_index);
         $("#tdVisibility").text(data.current.visibility);
+    }
+    
+    function FillErrorTable(data)
+    {
+        // error attributes
+        $("#tdCode").text(data.error.code);
+        $("#tdType").text(data.error.type);
+        $("#tdInfo").text(data.error.info);
     }
 </script>
 
@@ -147,6 +170,27 @@
 <form>
     <h5 class="bg-primary text-white text-center m-2 p-2">Results</h5>
     <div id="divSonuc">
+        <table id="errorTable" style="visibility: hidden">
+                    <tr>
+                        <td>
+                            <table id="tableError" style="border: 1px solid; caption-side: top; width: 100%">
+                                <caption style="font-weight: bold">Error Info</caption>
+                                <tr style="border: 1px solid">
+                                    <td style="border: 1px solid">Code:</td>
+                                    <td style="border: 1px solid" id="tdCode"></td>
+                                </tr>
+                                <tr style="border: 1px solid">
+                                    <td style="border: 1px solid">Type:</td>
+                                    <td style="border: 1px solid" id="tdType"></td>
+                                </tr>
+                                <tr style="border: 1px solid">
+                                    <td style="border: 1px solid">Info:</td>
+                                    <td style="border: 1px solid" id="tdInfo"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
         <table id="mainTable" style="visibility: hidden">
             <tr>
                 <td>
