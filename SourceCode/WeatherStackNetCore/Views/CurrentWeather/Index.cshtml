@@ -165,7 +165,10 @@
         <div class="col-10"></div>
         <div class="col-1">
             @* <button type="button" class="btn btn-danger" onclick="CleanForm()">Clean</button> *@
-            <button class="btn btn-danger" type="reset">Clean</button>
+            @* <button class="btn btn-danger" type="reset">Clean</button> *@
+            <a asp-controller="CurrentWeather" asp-action="Index">
+                <input type="button" class="btn btn-danger" value="Clean"/>
+            </a>
         </div>
         @* <div class="col-1"> *@
         @*     <button type="button" class="btn btn-primary" id="btnSearch">Search</button> *@

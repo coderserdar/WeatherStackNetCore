@@ -11,7 +11,7 @@ public class CurrentWeatherController : Controller
     /// <summary>
     /// Config element
     /// </summary>
-    private IConfiguration configuration;
+    private readonly IConfiguration configuration;
 
     /// <summary>
     /// This is the constructor of controller

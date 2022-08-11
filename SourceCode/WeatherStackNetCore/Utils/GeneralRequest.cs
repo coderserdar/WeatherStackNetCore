@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace WeatherStackNetCore.Utils;
+﻿namespace WeatherStackNetCore.Utils;
 
 /// <summary>
 /// API Request Class

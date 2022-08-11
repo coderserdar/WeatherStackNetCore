@@ -1,6 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using WeatherStackNetCore.Utils;
-
 namespace WeatherStackNetCore.Models;
 
 public class AutoCompleteViewModel
