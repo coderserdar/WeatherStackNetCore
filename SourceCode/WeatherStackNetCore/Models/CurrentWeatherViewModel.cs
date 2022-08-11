@@ -19,6 +19,8 @@ public class CurrentWeatherViewModel
 
     public List<ItemList> LanguageList { get; set; }
 
+    public CurrentWeather CurrentWeather { get; set; }
+
     #endregion
 
     public CurrentWeatherViewModel()
@@ -29,6 +31,7 @@ public class CurrentWeatherViewModel
         UnitList.Add(new ItemList {Text = "Fahrenheit", Value = "f"});
 
         LanguageList = new List<ItemList>();
+        LanguageList.Add(new ItemList {Text = "English", Value = "en"});
         LanguageList.Add(new ItemList {Text = "Turkish", Value = "tr"});
         LanguageList.Add(new ItemList {Text = "German", Value = "de"});
     }

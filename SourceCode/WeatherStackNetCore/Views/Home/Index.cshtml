@@ -9,7 +9,7 @@
 <table>
     <tr>
         <td>
-            <a asp-controller="CurrentWeather" asp-action="Index">
+            <a asp-controller="CurrentWeather" asp-action="Index" asp-route-model="new CurrentWeatherViewModel()">
                 <button class="btn btn-primary" style="width: 200; height: 200">Current Weather</button>
             </a>
         </td>

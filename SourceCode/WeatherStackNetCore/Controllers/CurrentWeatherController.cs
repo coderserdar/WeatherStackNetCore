@@ -23,13 +23,22 @@ public class CurrentWeatherController : Controller
         configuration = config;
     }
     
+    // /// <summary>
+    // /// This is used to show Current Weather search page
+    // /// </summary>
+    // /// <returns>Current Weather search page</returns>
+    // public IActionResult Index()
+    // {
+    //     var model = new CurrentWeatherViewModel();
+    //     return View(model);
+    // }
+    
     /// <summary>
     /// This is used to show Current Weather search page
     /// </summary>
     /// <returns>Current Weather search page</returns>
-    public IActionResult Index()
+    public IActionResult Index(CurrentWeatherViewModel? model)
     {
-        var model = new CurrentWeatherViewModel();
         return View(model);
     }
 
@@ -70,5 +79,34 @@ public class CurrentWeatherController : Controller
         {
             return null;
         }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> GetCurrentWeatherWithModel(CurrentWeatherViewModel model)
+    {
+        var currentWeather = new CurrentWeather();
+        
+        var apiKey = configuration.GetValue<string>("API_Key"); 
+        
+        var httpClient = new HttpClient();
+        httpClient.Timeout = new TimeSpan(0, 0, 30);
+        
+        var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={model.PlaceName}";
+        if (!string.IsNullOrEmpty(model.Unit))
+            requestString += $"&unit={model.Unit}";
+        if (!string.IsNullOrEmpty(model.Language))
+            requestString += $"&language={model.Language}";
+        
+        var response = await httpClient.GetAsync(requestString);
+        var result = await response.Content.ReadAsStringAsync();
+
+        var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
+        var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+        currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
+
+        model = new CurrentWeatherViewModel();
+        model.CurrentWeather = currentWeather;
+
+        return View("Index", model);
     }
 }
