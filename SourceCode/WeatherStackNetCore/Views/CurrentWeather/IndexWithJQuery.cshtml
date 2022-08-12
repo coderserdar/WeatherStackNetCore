@@ -1,0 +1,330 @@
+﻿@model WeatherStackNetCore.Models.CurrentWeatherViewModel
+@{
+    ViewData["Title"] = "Current Weather Page (With JQuery, AJAX)";
+    ViewBag.Header = "Current Weather Page (With JQuery, AJAX)";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+}
+
+<script>
+   function CleanForm()
+   {
+      document.getElementById('CurrentWeather').reset();
+      $('#divResult').hide();
+   }
+</script>
+
+<script>
+   $(function () {
+      $("#btnSearch").click(function () {
+          $("#mainTable").css('visibility','hidden');
+          $("#errorTable").css('visibility','hidden');
+            $.ajax({
+                 type: "POST",
+                 url: "/CurrentWeather/GetCurrentWeather",
+                 data: { "query": $("#txtPlaceName").val(), "unit": $("#drpUnitList").val(),"language": $("#drpLanguageList").val(),},
+                 success: function (response) {
+                     if (response != null)
+                     {
+                         $('#divResult').show();
+                         if (response.error === null)
+                         {
+                              if (response.location !== null)
+                              {
+                                  $("#mainTable").css('visibility','visible');
+                                  FillTables(response);
+                              }
+                              if (response.success === "false")
+                               {
+                                  $("#errorTable").css('visibility','visible');
+                                   FillErrorTable(response);
+                               }
+                         }
+                         else
+                         {
+                               if (response.success === "false")
+                               {
+                                   $("#errorTable").css('visibility','visible');
+                                   FillErrorTable(response);
+                               }
+                         }
+                     }
+                 },
+                 failure: function (response) {
+                    alert(response.responseText);
+                 },
+                 error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+      });
+  });
+</script>
+
+<script>
+    function FillTables(data)
+    {
+        // request attributes
+        $("#tdType").text(data.request.type);
+        $("#tdQuery").text(data.request.query);
+        $("#tdUnit").text(data.request.unit);
+        $("#tdLanguage").text(data.request.language);
+        
+        // location attributes
+        $("#tdName").text(data.location.name);
+        $("#tdCountry").text(data.location.country);
+        $("#tdRegion").text(data.location.region);
+        $("#tdLatitude").text(data.location.lat);
+        $("#tdLongitude").text(data.location.lon);
+        $("#tdTimeZoneId").text(data.location.timezone_id);
+        $("#tdLocalTime").text(data.location.localtime);
+        $("#tdLocalTimeEpoch").text(data.location.localtime_epoch);
+        $("#tdUTCOffset").text(data.location.utc_offset);
+        
+        // Current Attributes
+        $("#tdObservationTime").text(data.current.observation_time);
+        $("#tdTemperature").text(data.current.temperature);
+        $("#tdWeatherCode").text(data.current.weather_code);
+        $("#tdWeatherIcons").text(data.current.weather_icons);
+        $("#tdWeatherDescriptions").text(data.current.weather_descriptions);
+        $("#tdWindSpeed").text(data.current.wind_speed);
+        $("#tdWindDegree").text(data.current.wind_degree);
+        $("#tdWindDirection").text(data.current.wind_dir);
+        $("#tdPressure").text(data.current.pressure);
+        $("#tdPrecip").text(data.current.precip);
+        $("#tdHumidity").text(data.current.humidity);
+        $("#tdCloudCover").text(data.current.cloudcover);
+        $("#tdFeelsLike").text(data.current.feelslike);
+        $("#tdUVIndex").text(data.current.uv_index);
+        $("#tdVisibility").text(data.current.visibility);
+    }
+    
+    function FillErrorTable(data)
+    {
+        // error attributes
+        $("#tdCode").text(data.error.code);
+        $("#tdType").text(data.error.type);
+        $("#tdInfo").text(data.error.info);
+    }
+</script>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Current Weather</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+<form asp-action="GetCurrentWeatherWithModel" method="post" class="form-control" style="align-content: center" id="CurrentWeather">
+    <h5 class="bg-primary text-white text-center m-2 p-2">@ViewBag.Header</h5>
+    @* <div asp-validation-summary="All"></div> *@
+    <div class="row m-1">
+        <div class="col-2">
+            <label asp-for="PlaceName" class="form-label">@Model.PlaceName</label>
+        </div>
+        <div class="col-4">
+            <input asp-for="PlaceName" class="form-control" id="txtPlaceName"/>
+        </div>
+        <div class="col-4">
+            <span asp-validation-for="PlaceName" class="text-danger" style="font-weight: bold"></span>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-2">
+            <label asp-for="Unit" class="form-label" title="Unit">@Model.Unit</label>
+        </div>
+        <div class="col-4">
+            <select id="drpUnitList" class="form-control" asp-for="Unit" asp-items="@(new SelectList(Model.UnitList, "Value", "Text"))">
+                <option value="">--Select--</option>
+            </select>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-2">
+            <label asp-for="Language" class="form-label" title="Language">@Model.Language</label>
+        </div>
+        <div class="col-4">
+            <select id="drpLanguageList" class="form-control" asp-for="Language" asp-items="@(new SelectList(Model.LanguageList, "Value", "Text"))">
+                <option value="">--Select--</option>
+            </select>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-10"></div>
+        <div class="col-1">
+            <button type="button" class="btn btn-danger" onclick="CleanForm()">Clean</button>
+        </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
+        </div>
+    </div>
+</form>
+<br/>
+<br/>
+<form>
+    <h5 class="bg-primary text-white text-center m-2 p-2">Results</h5>
+    <div id="divResult">
+        <table id="errorTable" style="visibility: hidden">
+            <tr>
+                <td>
+                    <table id="tableError" style="border: 1px solid; caption-side: top; width: 100%">
+                        <caption style="font-weight: bold">Error Info</caption>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Code:</td>
+                            <td style="border: 1px solid" id="tdCode"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Type:</td>
+                            <td style="border: 1px solid" id="tdType"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Info:</td>
+                            <td style="border: 1px solid" id="tdInfo"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table id="mainTable" style="visibility: hidden">
+            <tr>
+                <td>
+                    <table id="tableRequest" style="border: 1px solid; caption-side: top; width: 30%">
+                        <caption style="font-weight: bold">Request Info</caption>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Type:</td>
+                            <td style="border: 1px solid" id="tdType"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Query:</td>
+                            <td style="border: 1px solid" id="tdQuery"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Unit:</td>
+                            <td style="border: 1px solid" id="tdUnit"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Language:</td>
+                            <td style="border: 1px solid" id="tdLanguage"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table id="tableLocation" style="border: 1px solid; caption-side: top; width: 30%">
+                        <caption style="font-weight: bold">Location Info</caption>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Name:</td>
+                            <td style="border: 1px solid" id="tdName"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Country:</td>
+                            <td style="border: 1px solid" id="tdCountry"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Region:</td>
+                            <td style="border: 1px solid" id="tdRegion"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Latitute:</td>
+                            <td style="border: 1px solid" id="tdLatitude"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Longitude:</td>
+                            <td style="border: 1px solid" id="tdLongitude"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Time Zone ID:</td>
+                            <td style="border: 1px solid" id="tdTimeZoneId"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Local Time:</td>
+                            <td style="border: 1px solid" id="tdLocalTime"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Local Time Epoch:</td>
+                            <td style="border: 1px solid" id="tdLocalTimeEpoch"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">UTC Offset:</td>
+                            <td style="border: 1px solid" id="tdUTCOffset"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table id="tableCurrent" style="border: 1px solid; caption-side: top; width: 30%">
+                        <caption style="font-weight: bold">Weather Info</caption>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Observation Time:</td>
+                            <td style="border: 1px solid" id="tdObservationTime"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Temperature:</td>
+                            <td style="border: 1px solid" id="tdTemperature"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Weather Code:</td>
+                            <td style="border: 1px solid" id="tdWeatherCode"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Weather Icons:</td>
+                            <td style="border: 1px solid" id="tdWeatherIcons"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Weather Descriptions:</td>
+                            <td style="border: 1px solid" id="tdWeatherDescriptions"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Wind Speed:</td>
+                            <td style="border: 1px solid" id="tdWindSpeed"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Wind Degree:</td>
+                            <td style="border: 1px solid" id="tdWindDegree"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Wind Direction:</td>
+                            <td style="border: 1px solid" id="tdWindDirection"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Pressure:</td>
+                            <td style="border: 1px solid" id="tdPressure"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Precip:</td>
+                            <td style="border: 1px solid" id="tdPrecip"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Humidity:</td>
+                            <td style="border: 1px solid" id="tdHumidity"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Cloud Cover:</td>
+                            <td style="border: 1px solid" id="tdCloudCover"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Feels Like:</td>
+                            <td style="border: 1px solid" id="tdFeelsLike"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">UV Index:</td>
+                            <td style="border: 1px solid" id="tdUVIndex"></td>
+                        </tr>
+                        <tr style="border: 1px solid">
+                            <td style="border: 1px solid">Visibility:</td>
+                            <td style="border: 1px solid" id="tdVisibility"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>

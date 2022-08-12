@@ -19,8 +19,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b0NvbXBsZXRlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/CurrentWeather/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVudFdlYXRoZXJcSW5kZXguY3NodG1s
+[C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVudFdlYXRoZXJcSW5kZXhXaXRoSlF1ZXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVudFdlYXRoZXJcSW5kZXhXaXRoTW9kZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/Home/Index.cshtml]

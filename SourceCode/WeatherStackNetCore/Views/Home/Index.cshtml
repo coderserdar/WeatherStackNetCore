@@ -9,11 +9,17 @@
 <table>
     <tr>
         <td>
-            <a asp-controller="CurrentWeather" asp-action="Index" asp-route-model="new CurrentWeatherViewModel()">
-                <button class="btn btn-primary" style="width: 200; height: 200">Current Weather</button>
+            <a asp-controller="CurrentWeather" asp-action="IndexWithJQuery">
+                <button class="btn btn-primary" style="width: 200; height: 200">Current Weather (With JQuery, AJAX)</button>
             </a>
         </td>
 
+        <td>
+            <a asp-controller="CurrentWeather" asp-action="IndexWithModel" asp-route-model="new CurrentWeatherViewModel()">
+                <button class="btn btn-primary" style="width: 200; height: 200">Current Weather (With Model)</button>
+            </a>
+        </td>
+        
         <td>
             <a asp-controller="AutoComplete" asp-action="Index">
                 <button class="btn btn-primary" style="width: 200; height: 200">Location Finder</button>

@@ -37,7 +37,17 @@ public class CurrentWeatherController : Controller
     /// This is used to show Current Weather search page
     /// </summary>
     /// <returns>Current Weather search page</returns>
-    public IActionResult Index(CurrentWeatherViewModel? model)
+    public IActionResult IndexWithJQuery()
+    {
+        var model = new CurrentWeatherViewModel();
+        return View(model);
+    }
+    
+    /// <summary>
+    /// This is used to show Current Weather search page
+    /// </summary>
+    /// <returns>Current Weather search page</returns>
+    public IActionResult IndexWithModel(CurrentWeatherViewModel? model)
     {
         return View(model);
     }
@@ -107,6 +117,6 @@ public class CurrentWeatherController : Controller
         model = new CurrentWeatherViewModel();
         model.CurrentWeather = currentWeather;
 
-        return View("Index", model);
+        return View("IndexWithModel", model);
     }
 }
