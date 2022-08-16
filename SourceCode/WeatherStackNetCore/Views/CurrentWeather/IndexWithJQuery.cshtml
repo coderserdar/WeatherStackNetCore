@@ -25,12 +25,18 @@
 <script>
    $(function () {
       $("#btnSearch").click(function () {
+          if ($("#txtPlaceName").val().trim().length < 1)
+          {
+              alert('You have to enter a place name');
+              event.preventDefault();
+              return false;
+          }
           $("#mainTable").css('visibility','hidden');
           $("#errorTable").css('visibility','hidden');
             $.ajax({
                  type: "POST",
                  url: "/CurrentWeather/GetCurrentWeather",
-                 data: { "query": $("#txtPlaceName").val(), "unit": $("#drpUnitList").val(),"language": $("#drpLanguageList").val(),},
+                 data: { "placeName": $("#txtPlaceName").val(), "unit": $("#drpUnitList").val(),"language": $("#drpLanguageList").val(),},
                  success: function (response) {
                      if (response != null)
                      {
@@ -93,7 +99,8 @@
         $("#tdObservationTime").text(data.current.observation_time);
         $("#tdTemperature").text(data.current.temperature);
         $("#tdWeatherCode").text(data.current.weather_code);
-        $("#tdWeatherIcons").text(data.current.weather_icons);
+        // $("#tdWeatherIcons").text(data.current.weather_icons);
+        $("#imgWeatherIcon").attr("src",data.current.weather_icons);
         $("#tdWeatherDescriptions").text(data.current.weather_descriptions);
         $("#tdWindSpeed").text(data.current.wind_speed);
         $("#tdWindDegree").text(data.current.wind_degree);
@@ -123,9 +130,10 @@
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
 </head>
 <body>
-<form asp-action="GetCurrentWeatherWithModel" method="post" class="form-control" style="align-content: center" id="CurrentWeather">
+<form asp-action="GetCurrentWeather" method="post" class="form-control" style="align-content: center" id="CurrentWeather">
+    @Html.AntiForgeryToken()
     <h5 class="bg-primary text-white text-center m-2 p-2">@ViewBag.Header</h5>
-    @* <div asp-validation-summary="All"></div> *@
+    @* <div asp-validation-summary="ModelOnly" class="text-danger"></div> *@
     <div class="row m-1">
         <div class="col-2">
             <label asp-for="PlaceName" class="form-label">@Model.PlaceName</label>
@@ -274,7 +282,7 @@
                         </tr>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Weather Icons:</td>
-                            <td style="border: 1px solid" id="tdWeatherIcons"></td>
+                            <td style="border: 1px solid" id="tdWeatherIcons"><img id="imgWeatherIcon" src=""/></td>
                         </tr>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Weather Descriptions:</td>

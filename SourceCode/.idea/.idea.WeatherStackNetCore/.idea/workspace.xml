@@ -7,6 +7,17 @@
   <component name="ChangeListManager">
     <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Models/CurrentWeatherViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Models/CurrentWeatherViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/refint/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/refint/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +25,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6647eb5eaf9ccc7b9b16b952378b0f91126ddd2c72aff55548f38c54aaf21/XmlObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -79,6 +91,7 @@
       <workItem from="1660209371249" duration="15000" />
       <workItem from="1660225295811" duration="5170000" />
       <workItem from="1660286698449" duration="1609000" />
+      <workItem from="1660649391353" duration="2245000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>
@@ -205,8 +218,39 @@
           </properties>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs</url>
+          <line>118</line>
+          <properties documentPath="C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\Controllers\CurrentWeatherController.cs" initialLine="118" containingFunctionPresentation="method 'GetCurrentWeatherWithModel'">
+            <startOffsets>
+              <option value="4437" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4474" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs</url>
+          <line>93</line>
+          <properties documentPath="C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\Controllers\CurrentWeatherController.cs" initialLine="93" containingFunctionPresentation="method 'GetCurrentWeatherWithModel'">
+            <startOffsets>
+              <option value="3288" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3311" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="LaunchSettings">
+        <watch expression="ModelState" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

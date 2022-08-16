@@ -7,19 +7,20 @@ public class CurrentWeatherViewModel
 {
     #region Fields
 
+    [StringLength(60, MinimumLength = 3)]
     [Required(ErrorMessage = "Please Enter A Place Name")]
     [Display(Name = "Place Name:")]
-    public string PlaceName { get; set; }
+    public string? PlaceName { get; set; }
 
-    [Display(Name = "Unit:")] public string Unit { get; set; }
+    [Display(Name = "Unit:")] public string? Unit { get; set; }
 
-    [Display(Name = "Language:")] public string Language { get; set; }
+    [Display(Name = "Language:")] public string? Language { get; set; }
 
     public List<ItemList> UnitList { get; set; }
 
     public List<ItemList> LanguageList { get; set; }
 
-    public CurrentWeather CurrentWeather { get; set; }
+    public CurrentWeather? CurrentWeather { get; set; }
 
     #endregion
 
@@ -34,5 +35,7 @@ public class CurrentWeatherViewModel
         LanguageList.Add(new ItemList {Text = "English", Value = "en"});
         LanguageList.Add(new ItemList {Text = "Turkish", Value = "tr"});
         LanguageList.Add(new ItemList {Text = "German", Value = "de"});
+
+        PlaceName = string.Empty;
     }
 }

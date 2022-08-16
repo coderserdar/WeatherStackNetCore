@@ -23,16 +23,6 @@ public class CurrentWeatherController : Controller
         configuration = config;
     }
     
-    // /// <summary>
-    // /// This is used to show Current Weather search page
-    // /// </summary>
-    // /// <returns>Current Weather search page</returns>
-    // public IActionResult Index()
-    // {
-    //     var model = new CurrentWeatherViewModel();
-    //     return View(model);
-    // }
-    
     /// <summary>
     /// This is used to show Current Weather search page
     /// </summary>
@@ -56,12 +46,12 @@ public class CurrentWeatherController : Controller
     /// This method is used to make WeaherStack Current API call
     /// And bring the result to the screen
     /// </summary>
-    /// <param name="query">General Parameter (Like City Name, County Name etc)</param>
+    /// <param name="placeName">General Parameter (Like City Name, County Name etc)</param>
     /// <param name="unit">Unit Parameter</param>
     /// <param name="language">Language Parameter (You shouldn't fill this parameter if your key is free version)</param>
     /// <returns>Current Weather Info</returns>
     [HttpPost]
-    public async Task<CurrentWeather?> GetCurrentWeather(string query, string unit, string language)
+    public async Task<CurrentWeather?> GetCurrentWeather(string placeName, string unit, string language)
     {
         try
         {
@@ -70,7 +60,7 @@ public class CurrentWeatherController : Controller
             var httpClient = new HttpClient();
             httpClient.Timeout = new TimeSpan(0, 0, 30);
         
-            var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={query}";
+            var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={placeName}";
             if (!string.IsNullOrEmpty(unit))
                 requestString += $"&unit={unit}";
             if (!string.IsNullOrEmpty(language))
@@ -91,32 +81,46 @@ public class CurrentWeatherController : Controller
         }
     }
 
+    /// <summary>
+    /// This method is used to make WeaherStack Current API call
+    /// And bring the result to the screen
+    /// But in this method we use the whole model
+    /// </summary>
+    /// <param name="model">Current Weather Search Page Elements</param>
+    /// <returns>Result Page</returns>
     [HttpPost]
     public async Task<IActionResult> GetCurrentWeatherWithModel(CurrentWeatherViewModel model)
     {
-        var currentWeather = new CurrentWeather();
+        if (ModelState.IsValid)
+        {
+            var currentWeather = new CurrentWeather();
         
-        var apiKey = configuration.GetValue<string>("API_Key"); 
+            var apiKey = configuration.GetValue<string>("API_Key"); 
         
-        var httpClient = new HttpClient();
-        httpClient.Timeout = new TimeSpan(0, 0, 30);
+            var httpClient = new HttpClient();
+            httpClient.Timeout = new TimeSpan(0, 0, 30);
         
-        var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={model.PlaceName}";
-        if (!string.IsNullOrEmpty(model.Unit))
-            requestString += $"&unit={model.Unit}";
-        if (!string.IsNullOrEmpty(model.Language))
-            requestString += $"&language={model.Language}";
+            var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={model.PlaceName}";
+            if (!string.IsNullOrEmpty(model.Unit))
+                requestString += $"&unit={model.Unit}";
+            if (!string.IsNullOrEmpty(model.Language))
+                requestString += $"&language={model.Language}";
         
-        var response = await httpClient.GetAsync(requestString);
-        var result = await response.Content.ReadAsStringAsync();
+            var response = await httpClient.GetAsync(requestString);
+            var result = await response.Content.ReadAsStringAsync();
 
-        var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
-        var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-        currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
+            var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
+            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+            currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
 
-        model = new CurrentWeatherViewModel();
-        model.CurrentWeather = currentWeather;
+            model = new CurrentWeatherViewModel();
+            model.CurrentWeather = currentWeather;
 
-        return View("IndexWithModel", model);
+            return View("IndexWithModel", model);
+        }
+        else
+        {
+           return View("IndexWithModel", model);
+        }
     }
 }
