@@ -5,14 +5,17 @@
     <projectFile profileName="IIS Express">WeatherStackNetCore/WeatherStackNetCore.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="">
+    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Some code improvements have been made. Required fields, model state has been added. Weather icon can be seen as an image in both of current weather pages.">
+      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithModel.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/AutoCompleteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/AutoCompleteController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Models/CurrentWeatherViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Models/CurrentWeatherViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Models/AutoCompleteViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Models/AutoCompleteViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithJQuery.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" afterDir="false" />
@@ -26,6 +29,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6647eb5eaf9ccc7b9b16b952378b0f91126ddd2c72aff55548f38c54aaf21/XmlObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -91,7 +95,7 @@
       <workItem from="1660209371249" duration="15000" />
       <workItem from="1660225295811" duration="5170000" />
       <workItem from="1660286698449" duration="1609000" />
-      <workItem from="1660649391353" duration="2245000" />
+      <workItem from="1660649391353" duration="4017000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>
@@ -170,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660288136778</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Some code improvements have been made. Required fields, model state has been added. Weather icon can be seen as an image in both of current weather pages.">
+      <created>1660651832150</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1660651832150</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,20 +211,21 @@
     <MESSAGE value="An alternative approach has been applied. Current Weather or Error info has been added to model and after submitting button, with an another methodi we will show the api result dynamically in model view. tables has been created in razor instead of jquery" />
     <MESSAGE value="Some code improvements have been made by the advices from JetBrains Code Inspect suggestions" />
     <MESSAGE value="2 different approaches on getting Current Weather have been made. You can get current weather info with using AJAX calls or sending the model and returning the model." />
-    <option name="LAST_COMMIT_MESSAGE" value="2 different approaches on getting Current Weather have been made. You can get current weather info with using AJAX calls or sending the model and returning the model." />
+    <MESSAGE value="Some code improvements have been made. Required fields, model state has been added. Weather icon can be seen as an image in both of current weather pages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some code improvements have been made. Required fields, model state has been added. Weather icon can be seen as an image in both of current weather pages." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WeatherStackNetCore/Controllers/AutoCompleteController.cs</url>
-          <line>57</line>
+          <line>66</line>
           <properties documentPath="C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\Controllers\AutoCompleteController.cs" initialLine="57" containingFunctionPresentation="method 'GetLocations'">
             <startOffsets>
-              <option value="1851" />
+              <option value="2124" />
             </startOffsets>
             <endOffsets>
-              <option value="1919" />
+              <option value="2192" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
@@ -223,10 +235,10 @@
           <line>118</line>
           <properties documentPath="C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\Controllers\CurrentWeatherController.cs" initialLine="118" containingFunctionPresentation="method 'GetCurrentWeatherWithModel'">
             <startOffsets>
-              <option value="4437" />
+              <option value="4439" />
             </startOffsets>
             <endOffsets>
-              <option value="4474" />
+              <option value="4476" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
@@ -236,10 +248,10 @@
           <line>93</line>
           <properties documentPath="C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\Controllers\CurrentWeatherController.cs" initialLine="93" containingFunctionPresentation="method 'GetCurrentWeatherWithModel'">
             <startOffsets>
-              <option value="3288" />
+              <option value="3290" />
             </startOffsets>
             <endOffsets>
-              <option value="3311" />
+              <option value="3313" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />

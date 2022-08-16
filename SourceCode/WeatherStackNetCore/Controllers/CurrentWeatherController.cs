@@ -43,7 +43,7 @@ public class CurrentWeatherController : Controller
     }
 
     /// <summary>
-    /// This method is used to make WeaherStack Current API call
+    /// This method is used to make WeatherStack Current API call
     /// And bring the result to the screen
     /// </summary>
     /// <param name="placeName">General Parameter (Like City Name, County Name etc)</param>
@@ -82,7 +82,7 @@ public class CurrentWeatherController : Controller
     }
 
     /// <summary>
-    /// This method is used to make WeaherStack Current API call
+    /// This method is used to make WeatherStack Current API call
     /// And bring the result to the screen
     /// But in this method we use the whole model
     /// </summary>

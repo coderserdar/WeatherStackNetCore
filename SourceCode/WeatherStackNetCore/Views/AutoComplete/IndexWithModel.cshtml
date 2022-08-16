@@ -1,0 +1,126 @@
+﻿@model WeatherStackNetCore.Models.AutoCompleteViewModel
+@{
+    ViewData["Title"] = "Location Search Page (With Model)";
+    ViewBag.Header = "Location Search Page (With Model)";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Location Search</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+<form asp-action="GetLocationsWithModel" method="post" class="form-control" style="align-content: center" id="AutoComplete">
+    <h5 class="bg-primary text-white text-center m-2 p-2">@ViewBag.Header</h5>
+    @* <div asp-validation-summary="All"></div> *@
+    <div class="row m-1">
+        <div class="col-2">
+            <label asp-for="PlaceName" class="form-label">@Model.PlaceName</label>
+        </div>
+        <div class="col-4">
+            <input asp-for="PlaceName" class="form-control" id="txtPlaceName"/>
+        </div>
+        <div class="col-4">
+            <span asp-validation-for="PlaceName" class="text-danger" style="font-weight: bold"></span>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-10"></div>
+        <div class="col-1">
+            <a asp-controller="AutoComplete" asp-action="IndexWithModel">
+                <input type="button" class="btn btn-danger" value="Clean"/>
+            </a>
+        </div>
+        <div class="col-1">
+            <button class="btn btn-primary" type="submit" id="btnSearch">Search</button>
+        </div>
+    </div>
+</form>
+<br/>
+<br/>
+<form>
+    <h5 class="bg-primary text-white text-center m-2 p-2">Results</h5>
+    @if (Model.AutoComplete != null)
+    {
+        if (Model.AutoComplete.error != null)
+        {
+            <table id="tableError" style="border: 1px solid; caption-side: top; width: 100%">
+                <caption style="font-weight: bold">Error Info</caption>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Code: </td>
+                    <td style="border: 1px solid">@Model.AutoComplete.error.code</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Type: </td>
+                    <td style="border: 1px solid">@Model.AutoComplete.error.type</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Info: </td>
+                    <td style="border: 1px solid">@Model.AutoComplete.error.info</td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <table id="tableRequest" style="border: 1px solid; caption-side: top; width: 100%">
+                <caption style="font-weight: bold">Request Info</caption>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Query:</td>
+                    <td style="border: 1px solid">@Model.AutoComplete.request.query</td>
+                </tr>
+            </table>
+            <br/>
+            foreach (var item in @Model.AutoComplete.results)
+            {
+                <table id="tableLocation" style="border: 1px solid; caption-side: top; width: 100%">
+                    <caption style="font-weight: bold">Location Info</caption>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">Name:</td>
+                        <td style="border: 1px solid">@item.name</td>
+                    </tr>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">Country:</td>
+                        <td style="border: 1px solid">@item.country</td>
+                    </tr>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">Region:</td>
+                        <td style="border: 1px solid">@item.region</td>
+                    </tr>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">Latitute:</td>
+                        <td style="border: 1px solid">@item.lat</td>
+                    </tr>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">Longitude:</td>
+                        <td style="border: 1px solid">@item.lon</td>
+                    </tr>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">Time Zone ID:</td>
+                        <td style="border: 1px solid">@item.timezone_id</td>
+                    </tr>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">Local Time:</td>
+                        <td style="border: 1px solid">@item.localtime</td>
+                    </tr>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">Local Time Epoch:</td>
+                        <td style="border: 1px solid">@item.localtime_epoch</td>
+                    </tr>
+                    <tr style="border: 1px solid">
+                        <td style="border: 1px solid">UTC Offset:</td>
+                        <td style="border: 1px solid">@item.utc_offset</td>
+                    </tr>
+                </table>
+                <br/>
+            }
+        }
+    }
+</form>
+</body>
+</html>

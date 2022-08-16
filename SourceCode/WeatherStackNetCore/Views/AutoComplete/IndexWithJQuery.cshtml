@@ -1,7 +1,7 @@
 ﻿@model WeatherStackNetCore.Models.AutoCompleteViewModel
 @{
-    ViewData["Title"] = "Location Search Page";
-    ViewBag.Header = "Location Search Page";
+    ViewData["Title"] = "Location Search Page (With JQuery, AJAX)";
+    ViewBag.Header = "Location Search Page (With JQuery, AJAX)";
     Layout = "_Layout";
 }
 
@@ -18,21 +18,22 @@
    function CleanForm()
    {
       document.getElementById('AutoComplete').reset();
-      $("#mainTable").css('visibility','hidden');
+      $('#divResult').hide();
    }
 </script>
 
 <script>
    $(function () {
       $("#btnSearch").click(function () {
-          $("#mainTable").css('visibility','hidden');
+          $('#divResult').hide();
             $.ajax({
                  type: "POST",
                  url: "/AutoComplete/GetLocations",
-                 data: { "query": $("#txtPlaceName").val() },
+                 data: { "placeName": $("#txtPlaceName").val() },
                  success: function (response) {
                      if (response != null)
                      {
+                         $('#divResult').show();
                          if (response.error === null)
                          {
                              if (response.request.results > 0)
@@ -102,7 +103,7 @@
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
 </head>
 <body>
-<form asp-action="Index" method="post" class="form-control" style="align-content: center" id="AutoComplete">
+<form asp-action="GetLocations" method="post" class="form-control" style="align-content: center" id="AutoComplete">
     <h5 class="bg-primary text-white text-center m-2 p-2">@ViewBag.Header</h5>
     @* <div asp-validation-summary="All"></div> *@
     <div class="row m-1">
@@ -130,7 +131,7 @@
 <br/>
 <form>
     <h5 class="bg-primary text-white text-center m-2 p-2">Results</h5>
-    <div id="divSonuc">
+    <div id="divResult">
         <table id="errorTable" style="visibility: hidden">
             <tr>
                 <td>
