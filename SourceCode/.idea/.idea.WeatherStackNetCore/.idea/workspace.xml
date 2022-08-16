@@ -5,22 +5,8 @@
     <projectFile profileName="IIS Express">WeatherStackNetCore/WeatherStackNetCore.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Some code improvements have been made. Required fields, model state has been added. Weather icon can be seen as an image in both of current weather pages.">
-      <change afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithModel.cshtml" afterDir="false" />
+    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Location search has been made by 2 approaches. With JQuery or With Model. Some bug fixes have been made">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/AutoCompleteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/AutoCompleteController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Models/AutoCompleteViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Models/AutoCompleteViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithJQuery.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/ref/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/refint/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/refint/WeatherStackNetCore.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/AutoCompleteController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6647eb5eaf9ccc7b9b16b952378b0f91126ddd2c72aff55548f38c54aaf21/XmlObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
@@ -95,7 +82,7 @@
       <workItem from="1660209371249" duration="15000" />
       <workItem from="1660225295811" duration="5170000" />
       <workItem from="1660286698449" duration="1609000" />
-      <workItem from="1660649391353" duration="4017000" />
+      <workItem from="1660649391353" duration="5275000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>
@@ -181,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660651832150</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Location search has been made by 2 approaches. With JQuery or With Model. Some bug fixes have been made">
+      <created>1660654381876</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1660654381876</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +206,8 @@
     <MESSAGE value="Some code improvements have been made by the advices from JetBrains Code Inspect suggestions" />
     <MESSAGE value="2 different approaches on getting Current Weather have been made. You can get current weather info with using AJAX calls or sending the model and returning the model." />
     <MESSAGE value="Some code improvements have been made. Required fields, model state has been added. Weather icon can be seen as an image in both of current weather pages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some code improvements have been made. Required fields, model state has been added. Weather icon can be seen as an image in both of current weather pages." />
+    <MESSAGE value="Location search has been made by 2 approaches. With JQuery or With Model. Some bug fixes have been made" />
+    <option name="LAST_COMMIT_MESSAGE" value="Location search has been made by 2 approaches. With JQuery or With Model. Some bug fixes have been made" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
