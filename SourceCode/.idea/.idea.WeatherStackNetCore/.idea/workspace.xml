@@ -7,6 +7,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Location search has been made by 2 approaches. With JQuery or With Model. Some bug fixes have been made">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithModel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithModel.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/bin/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +89,7 @@
       <workItem from="1660209371249" duration="15000" />
       <workItem from="1660225295811" duration="5170000" />
       <workItem from="1660286698449" duration="1609000" />
-      <workItem from="1660649391353" duration="5275000" />
+      <workItem from="1660649391353" duration="6362000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>

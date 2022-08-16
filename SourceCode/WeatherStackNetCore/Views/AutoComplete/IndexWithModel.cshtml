@@ -31,7 +31,12 @@
         </div>
     </div>
     <div class="row m-1">
-        <div class="col-10"></div>
+        <div class="col-9"></div>
+        <div class="col-1">
+            <a asp-controller="Home" asp-action="Index">
+                <input type="button" class="btn btn-info" value="Home"/>
+            </a>
+        </div>
         <div class="col-1">
             <a asp-controller="AutoComplete" asp-action="IndexWithModel">
                 <input type="button" class="btn btn-danger" value="Clean"/>

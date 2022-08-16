@@ -25,6 +25,12 @@
 <script>
    $(function () {
       $("#btnSearch").click(function () {
+          if ($("#txtPlaceName").val().trim().length < 1)
+          {
+              alert('You have to enter a place name');
+              event.preventDefault();
+              return false;
+          }
           $('#divResult').hide();
             $.ajax({
                  type: "POST",
@@ -118,7 +124,12 @@
         </div>
     </div>
     <div class="row m-1">
-        <div class="col-10"></div>
+        <div class="col-9"></div>
+        <div class="col-1">
+            <a asp-controller="Home" asp-action="Index">
+                <input type="button" class="btn btn-info" value="Home"/>
+            </a>
+        </div>
         <div class="col-1">
             <button type="button" class="btn btn-danger" onclick="CleanForm()">Clean</button>
         </div>

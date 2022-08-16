@@ -51,7 +51,12 @@
         </div>
     </div>
     <div class="row m-1">
-        <div class="col-10"></div>
+        <div class="col-9"></div>
+        <div class="col-1">
+            <a asp-controller="Home" asp-action="Index">
+                <input type="button" class="btn btn-info" value="Home"/>
+            </a>
+        </div>
         <div class="col-1">
             <a asp-controller="CurrentWeather" asp-action="IndexWithModel">
                 <input type="button" class="btn btn-danger" value="Clean"/>
@@ -65,154 +70,156 @@
 <br/>
 <br/>
 <form>
-<h5 class="bg-primary text-white text-center m-2 p-2">Results</h5>
-@if (Model.CurrentWeather != null)
-{
-    if (Model.CurrentWeather.error != null)
+    <h5 class="bg-primary text-white text-center m-2 p-2">Results</h5>
+    @if (Model.CurrentWeather != null)
     {
-        <table id="tableError" style="border: 1px solid; caption-side: top; width: 100%">
-            <caption style="font-weight: bold">Error Info</caption>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Code: </td>
-                <td style="border: 1px solid">@Model.CurrentWeather.error.code</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Type: </td>
-                <td style="border: 1px solid">@Model.CurrentWeather.error.type</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Info: </td>
-                <td style="border: 1px solid">@Model.CurrentWeather.error.info</td>
-            </tr>
-        </table>
+        if (Model.CurrentWeather.error != null)
+        {
+            <table id="tableError" style="border: 1px solid; caption-side: top; width: 100%">
+                <caption style="font-weight: bold">Error Info</caption>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Code: </td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.error.code</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Type: </td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.error.type</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Info: </td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.error.info</td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <table id="tableRequest" style="border: 1px solid; caption-side: top; width: 100%">
+                <caption style="font-weight: bold">Request Info</caption>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Type:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.request.type</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Query:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.request.query</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Unit:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.request.unit</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Language:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.request.language</td>
+                </tr>
+            </table>
+            <br/>
+            <table id="tableLocation" style="border: 1px solid; caption-side: top; width: 100%">
+                <caption style="font-weight: bold">Location Info</caption>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Name:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.name</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Country:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.country</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Region:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.region</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Latitute:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.lat</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Longitude:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.lon</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Time Zone ID:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.timezone_id</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Local Time:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.localtime</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Local Time Epoch:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.localtime_epoch</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">UTC Offset:</td>
+                    <td style="border: 1px solid">@Model.CurrentWeather.location.utc_offset</td>
+                </tr>
+            </table>
+            <br/>
+            <table id="tableCurrent" style="border: 1px solid; caption-side: top; width: 100%">
+                <caption style="font-weight: bold">Weather Info</caption>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Observation Time:</td>
+                    <td style="border: 1px solid" id="tdObservationTime">@Model.CurrentWeather.current.observation_time</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Temperature:</td>
+                    <td style="border: 1px solid" id="tdTemperature">@Model.CurrentWeather.current.temperature</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Weather Code:</td>
+                    <td style="border: 1px solid" id="tdWeatherCode">@Model.CurrentWeather.current.weather_code</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Weather Icons:</td>
+                    <td style="border: 1px solid" id="tdWeatherIcons">
+                        <img src="@Model.CurrentWeather.current.weather_icons[0]"/>
+                    </td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Weather Descriptions:</td>
+                    <td style="border: 1px solid" id="tdWeatherDescriptions">@Model.CurrentWeather.current.weather_descriptions[0]</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Wind Speed:</td>
+                    <td style="border: 1px solid" id="tdWindSpeed">@Model.CurrentWeather.current.wind_speed</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Wind Degree:</td>
+                    <td style="border: 1px solid" id="tdWindDegree">@Model.CurrentWeather.current.wind_degree</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Wind Direction:</td>
+                    <td style="border: 1px solid" id="tdWindDirection">@Model.CurrentWeather.current.wind_dir</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Pressure:</td>
+                    <td style="border: 1px solid" id="tdPressure">@Model.CurrentWeather.current.pressure</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Precip:</td>
+                    <td style="border: 1px solid" id="tdPrecip">@Model.CurrentWeather.current.precip</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Humidity:</td>
+                    <td style="border: 1px solid" id="tdHumidity">@Model.CurrentWeather.current.humidity</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Cloud Cover:</td>
+                    <td style="border: 1px solid" id="tdCloudCover">@Model.CurrentWeather.current.cloudcover</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Feels Like:</td>
+                    <td style="border: 1px solid" id="tdFeelsLike">@Model.CurrentWeather.current.feelslike</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">UV Index:</td>
+                    <td style="border: 1px solid" id="tdUVIndex">@Model.CurrentWeather.current.uv_index</td>
+                </tr>
+                <tr style="border: 1px solid">
+                    <td style="border: 1px solid">Visibility:</td>
+                    <td style="border: 1px solid" id="tdVisibility">@Model.CurrentWeather.current.visibility</td>
+                </tr>
+            </table>
+        }
     }
-    else
-    {
-        <table id="tableRequest" style="border: 1px solid; caption-side: top; width: 100%">
-            <caption style="font-weight: bold">Request Info</caption>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Type:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.request.type</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Query:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.request.query</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Unit:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.request.unit</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Language:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.request.language</td>
-            </tr>
-        </table>
-        <br/>
-        <table id="tableLocation" style="border: 1px solid; caption-side: top; width: 100%">
-            <caption style="font-weight: bold">Location Info</caption>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Name:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.name</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Country:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.country</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Region:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.region</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Latitute:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.lat</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Longitude:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.lon</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Time Zone ID:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.timezone_id</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Local Time:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.localtime</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Local Time Epoch:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.localtime_epoch</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">UTC Offset:</td>
-                <td style="border: 1px solid">@Model.CurrentWeather.location.utc_offset</td>
-            </tr>
-        </table>
-        <br/>
-        <table id="tableCurrent" style="border: 1px solid; caption-side: top; width: 100%">
-            <caption style="font-weight: bold">Weather Info</caption>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Observation Time:</td>
-                <td style="border: 1px solid" id="tdObservationTime">@Model.CurrentWeather.current.observation_time</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Temperature:</td>
-                <td style="border: 1px solid" id="tdTemperature">@Model.CurrentWeather.current.temperature</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Weather Code:</td>
-                <td style="border: 1px solid" id="tdWeatherCode">@Model.CurrentWeather.current.weather_code</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Weather Icons:</td>
-                <td style="border: 1px solid" id="tdWeatherIcons"><img src="@Model.CurrentWeather.current.weather_icons[0]"/></td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Weather Descriptions:</td>
-                <td style="border: 1px solid" id="tdWeatherDescriptions">@Model.CurrentWeather.current.weather_descriptions[0]</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Wind Speed:</td>
-                <td style="border: 1px solid" id="tdWindSpeed">@Model.CurrentWeather.current.wind_speed</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Wind Degree:</td>
-                <td style="border: 1px solid" id="tdWindDegree">@Model.CurrentWeather.current.wind_degree</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Wind Direction:</td>
-                <td style="border: 1px solid" id="tdWindDirection">@Model.CurrentWeather.current.wind_dir</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Pressure:</td>
-                <td style="border: 1px solid" id="tdPressure">@Model.CurrentWeather.current.pressure</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Precip:</td>
-                <td style="border: 1px solid" id="tdPrecip">@Model.CurrentWeather.current.precip</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Humidity:</td>
-                <td style="border: 1px solid" id="tdHumidity">@Model.CurrentWeather.current.humidity</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Cloud Cover:</td>
-                <td style="border: 1px solid" id="tdCloudCover">@Model.CurrentWeather.current.cloudcover</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Feels Like:</td>
-                <td style="border: 1px solid" id="tdFeelsLike">@Model.CurrentWeather.current.feelslike</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">UV Index:</td>
-                <td style="border: 1px solid" id="tdUVIndex">@Model.CurrentWeather.current.uv_index</td>
-            </tr>
-            <tr style="border: 1px solid">
-                <td style="border: 1px solid">Visibility:</td>
-                <td style="border: 1px solid" id="tdVisibility">@Model.CurrentWeather.current.visibility</td>
-            </tr>
-        </table>
-    }
-}
 </form>
 </body>
 </html>

@@ -3,32 +3,55 @@
     ViewBag.Header = "Home Page";
 }
 
+<style>
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  height: 100px;
+  width: 300px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+
 <h1 align="center">@ViewBag.Header</h1>
 <br/>
+<h3 style="font-weight: bold; font-style: italic">This app is written for using Weather Stack API for getting weather info</h3>
 <br/>
 <table>
     <tr>
         <td>
             <a asp-controller="CurrentWeather" asp-action="IndexWithJQuery">
-                <button class="btn btn-primary" style="width: 200; height: 200">Current Weather (With JQuery, AJAX)</button>
+                <button class="button">Current Weather (With JQuery, AJAX)</button>
             </a>
         </td>
-
         <td>
             <a asp-controller="CurrentWeather" asp-action="IndexWithModel" asp-route-model="new CurrentWeatherViewModel()">
-                <button class="btn btn-primary" style="width: 200; height: 200">Current Weather (With Model)</button>
+                <button class="button">Current Weather (With Model)</button>
             </a>
         </td>
-
         <td>
             <a asp-controller="AutoComplete" asp-action="IndexWithJQuery">
-                <button class="btn btn-primary" style="width: 200; height: 200">Location Finder (With JQuery, AJAX)</button>
+                <button class="button">Location Finder (With JQuery, AJAX)</button>
             </a>
         </td>
-
         <td>
             <a asp-controller="AutoComplete" asp-action="IndexWithModel" asp-route-model="new AutoCompleteViewModel()">
-                <button class="btn btn-primary" style="width: 200; height: 200">Location Finder (With Model)</button>
+                <button class="button">Location Finder (With Model)</button>
             </a>
         </td>
     </tr>

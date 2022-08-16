@@ -166,7 +166,12 @@
         </div>
     </div>
     <div class="row m-1">
-        <div class="col-10"></div>
+        <div class="col-9"></div>
+        <div class="col-1">
+            <a asp-controller="Home" asp-action="Index">
+                <input type="button" class="btn btn-info" value="Home"/>
+            </a>
+        </div>
         <div class="col-1">
             <button type="button" class="btn btn-danger" onclick="CleanForm()">Clean</button>
         </div>
@@ -282,7 +287,9 @@
                         </tr>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Weather Icons:</td>
-                            <td style="border: 1px solid" id="tdWeatherIcons"><img id="imgWeatherIcon" src=""/></td>
+                            <td style="border: 1px solid" id="tdWeatherIcons">
+                                <img id="imgWeatherIcon" src=""/>
+                            </td>
                         </tr>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Weather Descriptions:</td>
