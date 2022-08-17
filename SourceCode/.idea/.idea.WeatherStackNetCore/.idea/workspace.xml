@@ -5,8 +5,13 @@
     <projectFile profileName="IIS Express">WeatherStackNetCore/WeatherStackNetCore.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Return To Home buttons have been added to search pages. Main page style has been updated. Some bug fixes have been added">
+    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStackNetCore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithJQuery.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithJQuery.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithModel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithModel.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/Home/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,12 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/AutoCompleteController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6647eb5eaf9ccc7b9b16b952378b0f91126ddd2c72aff55548f38c54aaf21/XmlObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,7 +83,8 @@
       <workItem from="1660209371249" duration="15000" />
       <workItem from="1660225295811" duration="5170000" />
       <workItem from="1660286698449" duration="1609000" />
-      <workItem from="1660649391353" duration="7541000" />
+      <workItem from="1660649391353" duration="8134000" />
+      <workItem from="1660715873219" duration="1871000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>

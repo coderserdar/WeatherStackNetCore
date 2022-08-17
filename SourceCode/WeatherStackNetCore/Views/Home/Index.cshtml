@@ -3,29 +3,30 @@
     ViewBag.Header = "Home Page";
 }
 
+@* these style classes are used for make buttons more beautiful *@
 <style>
-.button {
-  padding: 15px 25px;
-  font-size: 24px;
-  text-align: center;
-  height: 100px;
-  width: 300px;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #04AA6D;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-.button:hover {background-color: #3e8e41}
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
+    .button {
+      padding: 15px 25px;
+      font-size: 24px;
+      text-align: center;
+      height: 100px;
+      width: 300px;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      background-color: #04AA6D;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+    
+    .button:hover {background-color: #3e8e41}
+    
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
 </style>
 
 <h1 align="center">@ViewBag.Header</h1>

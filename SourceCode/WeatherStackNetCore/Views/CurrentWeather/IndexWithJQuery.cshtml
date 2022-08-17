@@ -11,6 +11,7 @@
 
 @section Scripts
 {
+    // this is added for Cleaning form
     <partial name="_ValidationScriptsPartial"/>
 }
 
@@ -43,19 +44,22 @@
                          $('#divResult').show();
                          if (response.error === null)
                          {
+                              // Fill results with jquery
                               if (response.location !== null)
                               {
                                   $("#mainTable").css('visibility','visible');
                                   FillTables(response);
                               }
+                              // Fill error information with jquery
                               if (response.success === "false")
-                               {
+                              {
                                   $("#errorTable").css('visibility','visible');
                                    FillErrorTable(response);
-                               }
+                              }
                          }
                          else
                          {
+                               // Fill error information with jquery
                                if (response.success === "false")
                                {
                                    $("#errorTable").css('visibility','visible');
@@ -76,6 +80,7 @@
 </script>
 
 <script>
+    // This function is used to fill result table
     function FillTables(data)
     {
         // request attributes
@@ -114,6 +119,7 @@
         $("#tdVisibility").text(data.current.visibility);
     }
     
+    // This function is used to fill error table
     function FillErrorTable(data)
     {
         // error attributes
@@ -167,6 +173,7 @@
     </div>
     <div class="row m-1">
         <div class="col-9"></div>
+        @* This is used to go back to the main page *@
         <div class="col-1">
             <a asp-controller="Home" asp-action="Index">
                 <input type="button" class="btn btn-info" value="Home"/>
@@ -182,6 +189,7 @@
 </form>
 <br/>
 <br/>
+@* this form is result form, you can see error or result table after API call *@
 <form>
     <h5 class="bg-primary text-white text-center m-2 p-2">Results</h5>
     <div id="divResult">
@@ -206,10 +214,10 @@
                 </td>
             </tr>
         </table>
-        <table id="mainTable" style="visibility: hidden">
+        <table id="mainTable" style="visibility: hidden; width: 100%">
             <tr>
                 <td>
-                    <table id="tableRequest" style="border: 1px solid; caption-side: top; width: 30%">
+                    <table id="tableRequest" style="border: 1px solid; caption-side: top; width: 40%">
                         <caption style="font-weight: bold">Request Info</caption>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Type:</td>
@@ -230,7 +238,7 @@
                     </table>
                 </td>
                 <td>
-                    <table id="tableLocation" style="border: 1px solid; caption-side: top; width: 30%">
+                    <table id="tableLocation" style="border: 1px solid; caption-side: top; width: 40%">
                         <caption style="font-weight: bold">Location Info</caption>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Name:</td>
@@ -271,7 +279,7 @@
                     </table>
                 </td>
                 <td>
-                    <table id="tableCurrent" style="border: 1px solid; caption-side: top; width: 30%">
+                    <table id="tableCurrent" style="border: 1px solid; caption-side: top; width: 40%">
                         <caption style="font-weight: bold">Weather Info</caption>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Observation Time:</td>

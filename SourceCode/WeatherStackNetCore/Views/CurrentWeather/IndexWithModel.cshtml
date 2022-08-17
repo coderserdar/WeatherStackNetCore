@@ -18,7 +18,6 @@
 <body>
 <form asp-action="GetCurrentWeatherWithModel" method="post" class="form-control" style="align-content: center" id="CurrentWeather">
     <h5 class="bg-primary text-white text-center m-2 p-2">@ViewBag.Header</h5>
-    @* <div asp-validation-summary="All"></div> *@
     <div class="row m-1">
         <div class="col-2">
             <label asp-for="PlaceName" class="form-label">@Model.PlaceName</label>
@@ -52,6 +51,7 @@
     </div>
     <div class="row m-1">
         <div class="col-9"></div>
+        @* This is used to go back to the main page *@
         <div class="col-1">
             <a asp-controller="Home" asp-action="Index">
                 <input type="button" class="btn btn-info" value="Home"/>
@@ -73,6 +73,7 @@
     <h5 class="bg-primary text-white text-center m-2 p-2">Results</h5>
     @if (Model.CurrentWeather != null)
     {
+        // Error result table
         if (Model.CurrentWeather.error != null)
         {
             <table id="tableError" style="border: 1px solid; caption-side: top; width: 100%">
@@ -93,6 +94,7 @@
         }
         else
         {
+            // Current Weather request and results table
             <table id="tableRequest" style="border: 1px solid; caption-side: top; width: 100%">
                 <caption style="font-weight: bold">Request Info</caption>
                 <tr style="border: 1px solid">
