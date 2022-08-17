@@ -83,7 +83,7 @@
     function FillTables(data)
     {
         // request attributes
-        $("#tdType").text(data.request.type);
+        $("#tdRequestType").text(data.request.type);
         $("#tdQuery").text(data.request.query);
         $("#tdUnit").text(data.request.unit);
         $("#tdLanguage").text(data.request.language);
@@ -123,7 +123,7 @@
     {
         // error attributes
         $("#tdCode").text(data.error.code);
-        $("#tdType").text(data.error.type);
+        $("#tdErrorType").text(data.error.type);
         $("#tdInfo").text(data.error.info);
     }
 </script>
@@ -203,7 +203,7 @@
                         </tr>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Type:</td>
-                            <td style="border: 1px solid" id="tdType"></td>
+                            <td style="border: 1px solid" id="tdErrorType"></td>
                         </tr>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Info:</td>
@@ -220,7 +220,7 @@
                         <caption style="font-weight: bold">Request Info</caption>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Type:</td>
-                            <td style="border: 1px solid" id="tdType"></td>
+                            <td style="border: 1px solid" id="tdRequestType"></td>
                         </tr>
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Query:</td>
@@ -295,7 +295,7 @@
                         <tr style="border: 1px solid">
                             <td style="border: 1px solid">Weather Icons:</td>
                             <td style="border: 1px solid" id="tdWeatherIcons">
-                                <img id="imgWeatherIcon" src=""/>
+                                <img id="imgWeatherIcon" src="" alt=""/>
                             </td>
                         </tr>
                         <tr style="border: 1px solid">

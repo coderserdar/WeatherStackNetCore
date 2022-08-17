@@ -89,30 +89,27 @@ public class AutoCompleteController : Controller
     [HttpPost]
     public async Task<IActionResult> GetLocationsWithModel(AutoCompleteViewModel model)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid) return View("IndexWithModel", model);
+        var apiKey = _configuration.GetValue<string>("API_Key"); 
+        
+        var httpClient = new HttpClient();
+        httpClient.Timeout = new TimeSpan(0, 0, 30);
+        
+        var requestString = "http://api.weatherstack.com/" + $"autocomplete?access_key={apiKey}&query={model.PlaceName}";
+        
+        var response = await httpClient.GetAsync(requestString);
+        var result = await response.Content.ReadAsStringAsync();
+
+        var serializer = new DataContractJsonSerializer(typeof(AutoComplete));
+        var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+        var autoComplete = (AutoComplete)serializer.ReadObject(memoryStream)!;
+
+        model = new AutoCompleteViewModel
         {
-            var apiKey = _configuration.GetValue<string>("API_Key"); 
-        
-            var httpClient = new HttpClient();
-            httpClient.Timeout = new TimeSpan(0, 0, 30);
-        
-            var requestString = "http://api.weatherstack.com/" + $"autocomplete?access_key={apiKey}&query={model.PlaceName}";
-        
-            var response = await httpClient.GetAsync(requestString);
-            var result = await response.Content.ReadAsStringAsync();
+            AutoComplete = autoComplete
+        };
 
-            var serializer = new DataContractJsonSerializer(typeof(AutoComplete));
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-            var autoComplete = (AutoComplete)serializer.ReadObject(memoryStream)!;
+        return View("IndexWithModel", model);
 
-            model = new AutoCompleteViewModel();
-            model.AutoComplete = autoComplete;
-
-            return View("IndexWithModel", model);
-        }
-        else
-        {
-            return View("IndexWithModel", model);
-        }
     }
 }

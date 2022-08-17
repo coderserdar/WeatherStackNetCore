@@ -13,9 +13,9 @@ public class AutoCompleteViewModel
 
     [Required(ErrorMessage = "Please Enter A Place Name")]
     [Display(Name = "Place Name:")]
-    public string? PlaceName { get; set; }
+    public string? PlaceName { get; init; }
     
-    public AutoComplete? AutoComplete { get; set; }
+    public AutoComplete? AutoComplete { get; init; }
 
     #endregion
 }
