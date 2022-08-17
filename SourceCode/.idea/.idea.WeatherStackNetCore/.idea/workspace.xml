@@ -5,16 +5,7 @@
     <projectFile profileName="IIS Express">WeatherStackNetCore/WeatherStackNetCore.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Some comments have been added to cs files">
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/AutoCompleteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/AutoCompleteController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Controllers/CurrentWeatherController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Models/AutoCompleteViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Models/AutoCompleteViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Models/CurrentWeatherViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Models/CurrentWeatherViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Models/ErrorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Models/ErrorViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithModel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/AutoComplete/IndexWithModel.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithJQuery.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherStackNetCore/Views/CurrentWeather/IndexWithModel.cshtml" afterDir="false" />
-    </list>
+    <list default="true" id="0b665bf4-50d8-44fc-a047-f83a15d29edd" name="Changes" comment="Some code improvements have been made by the advices of JetBrains Rider Code Inspect" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +13,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/AutoCompleteController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Controllers/AutoCompleteController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6647eb5eaf9ccc7b9b16b952378b0f91126ddd2c72aff55548f38c54aaf21/XmlObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/serda/Documents/GitHub/WeatherStackNetCore/SourceCode/WeatherStackNetCore/Views/AutoComplete/IndexWithJQuery.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
@@ -89,7 +81,7 @@
       <workItem from="1660225295811" duration="5170000" />
       <workItem from="1660286698449" duration="1609000" />
       <workItem from="1660649391353" duration="8134000" />
-      <workItem from="1660715873219" duration="3675000" />
+      <workItem from="1660715873219" duration="4345000" />
     </task>
     <task id="LOCAL-00001" summary="Some comments have been added. After API call results are shown in 3 different tables. In client side request, location and weather information can be shown">
       <created>1657268562601</created>
@@ -210,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660719523040</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Some code improvements have been made by the advices of JetBrains Rider Code Inspect">
+      <created>1660720257510</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1660720257510</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +245,8 @@
     <MESSAGE value="Some comments have been added in cshtml files" />
     <MESSAGE value="Unnecessary comments have been deleted" />
     <MESSAGE value="Some comments have been added to cs files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some comments have been added to cs files" />
+    <MESSAGE value="Some code improvements have been made by the advices of JetBrains Rider Code Inspect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some code improvements have been made by the advices of JetBrains Rider Code Inspect" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
