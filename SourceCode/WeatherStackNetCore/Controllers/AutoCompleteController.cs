@@ -6,12 +6,16 @@ using WeatherStackNetCore.Utils;
 
 namespace WeatherStackNetCore.Controllers;
 
+/// <summary>
+/// This controller is used to
+/// Call API function which is about location searching
+/// </summary>
 public class AutoCompleteController : Controller
 {
     /// <summary>
     /// Config element
     /// </summary>
-    private readonly IConfiguration configuration;
+    private readonly IConfiguration _configuration;
 
     /// <summary>
     /// This is the constructor of controller
@@ -20,7 +24,7 @@ public class AutoCompleteController : Controller
     public AutoCompleteController(IConfiguration config)
     {
         // this is used to get some key values from appSettings.Json
-        configuration = config;
+        _configuration = config;
     }
     
     /// <summary>
@@ -53,7 +57,7 @@ public class AutoCompleteController : Controller
     {
         try
         {
-            var apiKey = configuration.GetValue<string>("API_Key"); 
+            var apiKey = _configuration.GetValue<string>("API_Key"); 
         
             var httpClient = new HttpClient();
             httpClient.Timeout = new TimeSpan(0, 0, 30);
@@ -87,9 +91,7 @@ public class AutoCompleteController : Controller
     {
         if (ModelState.IsValid)
         {
-            var autoComplete = new AutoComplete();
-        
-            var apiKey = configuration.GetValue<string>("API_Key"); 
+            var apiKey = _configuration.GetValue<string>("API_Key"); 
         
             var httpClient = new HttpClient();
             httpClient.Timeout = new TimeSpan(0, 0, 30);
@@ -101,7 +103,7 @@ public class AutoCompleteController : Controller
 
             var serializer = new DataContractJsonSerializer(typeof(AutoComplete));
             var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-            autoComplete = (AutoComplete)serializer.ReadObject(memoryStream)!;
+            var autoComplete = (AutoComplete)serializer.ReadObject(memoryStream)!;
 
             model = new AutoCompleteViewModel();
             model.AutoComplete = autoComplete;

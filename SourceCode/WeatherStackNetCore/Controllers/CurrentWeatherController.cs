@@ -6,12 +6,16 @@ using WeatherStackNetCore.Utils;
 
 namespace WeatherStackNetCore.Controllers;
 
+/// <summary>
+/// This controller is used to
+/// Call API function which is about Current Weather Info searching
+/// </summary>
 public class CurrentWeatherController : Controller
 {
     /// <summary>
     /// Config element
     /// </summary>
-    private readonly IConfiguration configuration;
+    private readonly IConfiguration _configuration;
 
     /// <summary>
     /// This is the constructor of controller
@@ -20,7 +24,7 @@ public class CurrentWeatherController : Controller
     public CurrentWeatherController(IConfiguration config)
     {
         // this is used to get some key values from appSettings.Json
-        configuration = config;
+        _configuration = config;
     }
     
     /// <summary>
@@ -55,7 +59,7 @@ public class CurrentWeatherController : Controller
     {
         try
         {
-            var apiKey = configuration.GetValue<string>("API_Key"); 
+            var apiKey = _configuration.GetValue<string>("API_Key"); 
         
             var httpClient = new HttpClient();
             httpClient.Timeout = new TimeSpan(0, 0, 30);
@@ -93,9 +97,7 @@ public class CurrentWeatherController : Controller
     {
         if (ModelState.IsValid)
         {
-            var currentWeather = new CurrentWeather();
-        
-            var apiKey = configuration.GetValue<string>("API_Key"); 
+            var apiKey = _configuration.GetValue<string>("API_Key"); 
         
             var httpClient = new HttpClient();
             httpClient.Timeout = new TimeSpan(0, 0, 30);
@@ -111,7 +113,7 @@ public class CurrentWeatherController : Controller
 
             var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
             var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-            currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
+            var currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
 
             model = new CurrentWeatherViewModel();
             model.CurrentWeather = currentWeather;

@@ -3,6 +3,10 @@ using WeatherStackNetCore.Utils;
 
 namespace WeatherStackNetCore.Models;
 
+/// <summary>
+/// This model class is used to create the search page
+/// And stores the result info too
+/// </summary>
 public class CurrentWeatherViewModel
 {
     #region Fields
@@ -16,10 +20,19 @@ public class CurrentWeatherViewModel
 
     [Display(Name = "Language:")] public string? Language { get; set; }
 
+    /// <summary>
+    /// This is used to fill dropdownlist for units
+    /// </summary>
     public List<ItemList> UnitList { get; set; }
 
+    /// <summary>
+    /// This is used to fill dropdownlist for languages
+    /// </summary>
     public List<ItemList> LanguageList { get; set; }
 
+    /// <summary>
+    /// API Call result
+    /// </summary>
     public CurrentWeather? CurrentWeather { get; set; }
 
     #endregion
@@ -35,7 +48,5 @@ public class CurrentWeatherViewModel
         LanguageList.Add(new ItemList {Text = "English", Value = "en"});
         LanguageList.Add(new ItemList {Text = "Turkish", Value = "tr"});
         LanguageList.Add(new ItemList {Text = "German", Value = "de"});
-
-        PlaceName = string.Empty;
     }
 }
