@@ -8,6 +8,10 @@ I try to learn .NET Core technologies by writing code, so i make a web app with 
 I tested this app a lot, but if you test and send me issues I will be so appreciated to you. 
 This app is written in **C#** programming language and in **JetBrains Rider** *IDE*. 
 
+|  Programming Language  |  .NET Version  | Development Platform |
+|------------------------|----------------|----------------------|
+|          *C#*          |      *6*       |  *JetBrains Rider*   |
+
 In this app you can do;
 
  - Search a place (city, county etc.) current weather information by 2 approaches
