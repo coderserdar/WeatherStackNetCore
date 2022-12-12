@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[6.0.5, )"
             },
+            "FullCalendar.MVC5": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2-beta1, )"
@@ -58,7 +62,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -70,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,14 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "CIbhoe00nI3n7Jsdjkz18UqTwm/U7/YtBu5/vhqy9hPg4skoY1Kesx02aAcnXaehCm2Dskdudw8WsF38AjeXrA==",
+  "dgSpecHash": "vyF8pjxYgpkjcqFE51N7KTsR/uGaBAwD53Faei8n1M2aK+IVCkUHqAn3986/bbZ9R/KHZQk0EZNSTo+AE9TDCA==",
   "success": true,
   "projectFilePath": "C:\\Users\\serda\\Documents\\GitHub\\WeatherStackNetCore\\SourceCode\\WeatherStackNetCore\\WeatherStackNetCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serda\\.nuget\\packages\\extensions.system.text.json\\6.0.5\\extensions.system.text.json.6.0.5.nupkg.sha512",
+    "C:\\Users\\serda\\.nuget\\packages\\fullcalendar.mvc5\\1.0.6\\fullcalendar.mvc5.1.0.6.nupkg.sha512",
     "C:\\Users\\serda\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta1\\newtonsoft.json.13.0.2-beta1.nupkg.sha512",
     "C:\\Users\\serda\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\serda\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\serda\\.nuget\\packages\\system.text.json\\6.0.5\\system.text.json.6.0.5.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FullCalendar.MVC5 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FullCalendar.MVC5",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

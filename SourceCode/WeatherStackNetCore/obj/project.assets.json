@@ -14,6 +14,15 @@
           "lib/net6.0/Extensions.System.Text.Json.dll": {}
         }
       },
+      "FullCalendar.MVC5/1.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/FullCalendar.MVC5.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FullCalendar.MVC5.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.2-beta1": {
         "type": "package",
         "compile": {
@@ -85,6 +94,21 @@
         "extensions.system.text.json.6.0.5.nupkg.sha512",
         "extensions.system.text.json.nuspec",
         "lib/net6.0/Extensions.System.Text.Json.dll"
+      ]
+    },
+    "FullCalendar.MVC5/1.0.6": {
+      "sha512": "TQjPB7xOFDY9rRLI6POO0tsKZ5y+Y8hUiS1PRxs3NjNv42RT2DOxgMG8R8jRRwvigfSuHngIbuRlPoU940ok4Q==",
+      "type": "package",
+      "path": "fullcalendar.mvc5/1.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/fullcalendar.helper.js",
+        "content/Scripts/fullcalendar.helper.min.js",
+        "fullcalendar.mvc5.1.0.6.nupkg.sha512",
+        "fullcalendar.mvc5.nuspec",
+        "lib/net45/FullCalendar.MVC5.dll",
+        "lib/net45/FullCalendar.MVC5.xml"
       ]
     },
     "Newtonsoft.Json/13.0.2-beta1": {
@@ -227,6 +251,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Extensions.System.Text.Json >= 6.0.5",
+      "FullCalendar.MVC5 >= 1.0.6",
       "Newtonsoft.Json >= 13.0.2-beta1"
     ]
   },
@@ -277,6 +302,10 @@
             "target": "Package",
             "version": "[6.0.5, )"
           },
+          "FullCalendar.MVC5": {
+            "target": "Package",
+            "version": "[1.0.6, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.2-beta1, )"
@@ -288,7 +317,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -300,8 +330,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FullCalendar.MVC5 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FullCalendar.MVC5",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
