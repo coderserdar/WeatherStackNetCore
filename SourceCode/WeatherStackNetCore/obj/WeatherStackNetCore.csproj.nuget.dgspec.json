@@ -47,10 +47,6 @@
               "target": "Package",
               "version": "[6.0.5, )"
             },
-            "FullCalendar.MVC5": {
-              "target": "Package",
-              "version": "[1.0.6, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2-beta1, )"
