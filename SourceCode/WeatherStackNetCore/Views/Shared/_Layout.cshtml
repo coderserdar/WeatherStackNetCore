@@ -6,43 +6,83 @@
     <title>@ViewData["Title"] - WeatherStackNetCore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    @* <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true"/> *@
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WeatherStackNetCore</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            @* <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between"> *@
-            @*     <ul class="navbar-nav flex-grow-1"> *@
-            @*         <li class="nav-item"> *@
-            @*             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a> *@
-            @*         </li> *@
-            @*         <li class="nav-item"> *@
-            @*             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
-            @*         </li> *@
-            @*     </ul> *@
-            @* </div> *@
+
+@* <header> *@
+@*     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"> *@
+@*         <div class="container-fluid"> *@
+@*             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WeatherStackNetCore</a> *@
+@*             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" *@
+@*                     aria-expanded="false" aria-label="Toggle navigation"> *@
+@*                 <span class="navbar-toggler-icon"></span> *@
+@*             </button> *@
+@*             $1$ <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between"> #1# *@
+@*             $1$     <ul class="navbar-nav flex-grow-1"> #1# *@
+@*             $1$         <li class="nav-item"> #1# *@
+@*             $1$             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a> #1# *@
+@*             $1$         </li> #1# *@
+@*             $1$         <li class="nav-item"> #1# *@
+@*             $1$             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> #1# *@
+@*             $1$         </li> #1# *@
+@*             $1$     </ul> #1# *@
+@*             $1$ </div> #1# *@
+@*         </div> *@
+@*     </nav> *@
+@* </header> *@
+
+<div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand link-dark" asp-controller="home" asp-action="Index">
+            WeatherStack Menu
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="CurrentWeather" asp-action="IndexWithJQuery">
+                        Current Weather (With JQuery, AJAX)
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="CurrentWeather" asp-action="IndexWithModel">
+                        Current Weather (With Model)
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" asp-controller="AutoComplete" asp-action="IndexWithJQuery">
+                        Location Finder (With JQuery, AJAX)
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" asp-controller="AutoComplete" asp-action="IndexWithModel">
+                        Location Finder (With Model)
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
-</header>
-<div class="container">
-    <main role="main" class="pb-3">
+    <div>
         @RenderBody()
-    </main>
+    </div>
+    
+    <footer>
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2022 - WeatherStackNetCore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+    </footer>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2022 - WeatherStackNetCore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
-</footer>
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
+@* <script src="~/js/scripts.js" asp-append-version="true"></script> *@
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

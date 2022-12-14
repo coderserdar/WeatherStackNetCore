@@ -43,6 +43,7 @@ public class CurrentWeatherController : Controller
     /// <returns>Current Weather search page</returns>
     public IActionResult IndexWithModel(CurrentWeatherViewModel? model)
     {
+        model ??= new CurrentWeatherViewModel();
         return View(model);
     }
 

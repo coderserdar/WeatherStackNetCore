@@ -43,6 +43,7 @@ public class AutoCompleteController : Controller
     /// <returns>Location search page</returns>
     public IActionResult IndexWithModel(AutoCompleteViewModel? model)
     {
+        model ??= new AutoCompleteViewModel();
         return View(model);
     }
 
