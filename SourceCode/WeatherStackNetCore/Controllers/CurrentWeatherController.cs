@@ -96,31 +96,56 @@ public class CurrentWeatherController : Controller
     [HttpPost]
     public async Task<IActionResult> GetCurrentWeatherWithModel(CurrentWeatherViewModel model)
     {
-        if (!ModelState.IsValid) return View("IndexWithModel", model);
-        var apiKey = _configuration.GetValue<string>("API_Key"); 
-        
-        var httpClient = new HttpClient();
-        httpClient.Timeout = new TimeSpan(0, 0, 30);
-        
-        var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={model.PlaceName}";
-        if (!string.IsNullOrEmpty(model.Unit))
-            requestString += $"&unit={model.Unit}";
-        if (!string.IsNullOrEmpty(model.Language))
-            requestString += $"&language={model.Language}";
-        
-        var response = await httpClient.GetAsync(requestString);
-        var result = await response.Content.ReadAsStringAsync();
-
-        var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
-        var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-        var currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
-
-        model = new CurrentWeatherViewModel
+        try
         {
-            CurrentWeather = currentWeather
-        };
+            if (!ModelState.IsValid) return View("IndexWithModel", model);
+            var apiKey = _configuration.GetValue<string>("API_Key"); 
+        
+            var httpClient = new HttpClient();
+            httpClient.Timeout = new TimeSpan(0, 0, 30);
+        
+            var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={model.PlaceName}";
+            if (!string.IsNullOrEmpty(model.Unit))
+                requestString += $"&unit={model.Unit}";
+            if (!string.IsNullOrEmpty(model.Language))
+                requestString += $"&language={model.Language}";
+        
+            var response = await httpClient.GetAsync(requestString);
+            var result = await response.Content.ReadAsStringAsync();
 
-        return View("IndexWithModel", model);
+            var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
+            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+            var currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
 
+            model = new CurrentWeatherViewModel
+            {
+                CurrentWeather = currentWeather
+            };
+            
+            if (model.CurrentWeather.error != null)
+            {
+                ViewBag.MessageType = "error";
+                ViewBag.Message = "Something has gone wrong";
+            }
+            else
+            {
+                ViewBag.MessageType = "success";
+                ViewBag.Message = "Operation is successful";   
+            }
+
+            return View("IndexWithModel", model);
+        }
+        catch (Exception e)
+        {
+            model = new CurrentWeatherViewModel
+            {
+                CurrentWeather = null
+            };
+
+            ViewBag.MessageType = "error";
+            ViewBag.Message = "Something has gone wrong";
+
+            return View("IndexWithModel", model);
+        }
     }
 }

@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/notifications.js"></script>
+<link rel="stylesheet" href="~/css/lobibox.css" asp-append-version="true"/>
+<link rel="stylesheet" href="~/css/notificationMessage.css" asp-append-version="true"/>
 
 <html>
 <head>
@@ -66,6 +69,12 @@
             <button class="btn btn-primary" type="submit" id="btnSearch">Search</button>
         </div>
     </div>
+    @if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <script type="text/javascript" lang="javascript">
+            Lobibox.notify('@ViewBag.MessageType', { size: 'normal', msg: '@ViewBag.Message' });
+        </script>
+    }
 </form>
 <br/>
 <br/>

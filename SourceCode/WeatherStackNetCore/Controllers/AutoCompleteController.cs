@@ -90,27 +90,52 @@ public class AutoCompleteController : Controller
     [HttpPost]
     public async Task<IActionResult> GetLocationsWithModel(AutoCompleteViewModel model)
     {
-        if (!ModelState.IsValid) return View("IndexWithModel", model);
-        var apiKey = _configuration.GetValue<string>("API_Key"); 
-        
-        var httpClient = new HttpClient();
-        httpClient.Timeout = new TimeSpan(0, 0, 30);
-        
-        var requestString = "http://api.weatherstack.com/" + $"autocomplete?access_key={apiKey}&query={model.PlaceName}";
-        
-        var response = await httpClient.GetAsync(requestString);
-        var result = await response.Content.ReadAsStringAsync();
-
-        var serializer = new DataContractJsonSerializer(typeof(AutoComplete));
-        var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-        var autoComplete = (AutoComplete)serializer.ReadObject(memoryStream)!;
-
-        model = new AutoCompleteViewModel
+        try
         {
-            AutoComplete = autoComplete
-        };
+            if (!ModelState.IsValid) return View("IndexWithModel", model);
+            var apiKey = _configuration.GetValue<string>("API_Key"); 
+        
+            var httpClient = new HttpClient();
+            httpClient.Timeout = new TimeSpan(0, 0, 30);
+        
+            var requestString = "http://api.weatherstack.com/" + $"autocomplete?access_key={apiKey}&query={model.PlaceName}";
+        
+            var response = await httpClient.GetAsync(requestString);
+            var result = await response.Content.ReadAsStringAsync();
 
-        return View("IndexWithModel", model);
+            var serializer = new DataContractJsonSerializer(typeof(AutoComplete));
+            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+            var autoComplete = (AutoComplete)serializer.ReadObject(memoryStream)!;
 
+            model = new AutoCompleteViewModel
+            {
+                AutoComplete = autoComplete
+            };
+            
+            if (model.AutoComplete.error != null)
+            {
+                ViewBag.MessageType = "error";
+                ViewBag.Message = "Something has gone wrong";
+            }
+            else
+            {
+                ViewBag.MessageType = "success";
+                ViewBag.Message = "Operation is successful";   
+            }
+            
+            return View("IndexWithModel", model);
+        }
+        catch (Exception e)
+        {
+            model = new AutoCompleteViewModel
+            {
+                AutoComplete = null
+            };
+
+            ViewBag.MessageType = "error";
+            ViewBag.Message = "Something has gone wrong";
+
+            return View("IndexWithModel", model);
+        }
     }
 }
