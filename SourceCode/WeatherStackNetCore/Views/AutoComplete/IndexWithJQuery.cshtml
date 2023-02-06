@@ -27,7 +27,8 @@
       $("#btnSearch").click(function () {
           if ($("#txtPlaceName").val().trim().length < 1)
           {
-              alert('You have to enter a place name');
+              Lobibox.notify('error', { size: 'large', msg: "You have to enter a place name" });
+              // alert('You have to enter a place name');
               event.preventDefault();
               return false;
           }
@@ -39,6 +40,7 @@
                  success: function (response) {
                      if (response != null)
                      {
+                         Lobibox.notify('success', { size: 'normal', msg: "Operation is successful" });
                          $('#divResult').show();
                          if (response.error === null)
                          {

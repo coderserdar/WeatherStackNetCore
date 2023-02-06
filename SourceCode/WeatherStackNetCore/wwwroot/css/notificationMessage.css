@@ -1,0 +1,172 @@
+﻿
+     #noti_Container {
+         position: relative;
+         margin-top: 0.7em;
+     }
+
+    /* Bildirim Butonu */
+    #noti_Button {
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        background: transparent;
+        margin: -3px 10px 0 10px;
+        cursor: pointer;
+    }
+
+    /* Bildirim sayacı. */
+    #noti_Counter {
+        display: block;
+        position: absolute;
+        background: #E1141E;
+        color: #FFF;
+        font-size: 12px;
+        font-weight: normal;
+        padding: 1px 3px;
+        margin: -8px 0 0 25px;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        z-index: 1;
+    }
+
+    /* Ana Bildirim */
+    #notifications {
+        display: none;
+        width: 240px;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        background: #FFF;
+        border: solid 1px rgba(100, 100, 100, .20);
+        -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .20);
+        z-index: 0;
+    }
+    #notifications:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        color: transparent;
+        border: 10px solid #CCC;
+        border-color: transparent transparent #FFF;
+        margin-top: -20px;
+        margin-left: 10px;
+    }
+
+    /*Bildirim Başlığı*/
+
+    #baslikh3 {
+        display: block;
+        color: #333;
+        background: #FFF;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 8px;
+        margin: 0;
+        border-bottom: solid 1px rgba(100, 100, 100, .30);
+    }
+
+    /*Alt hepsi yazısı*/
+    .seeAll {
+        background: #F6F7F8;
+        padding: 12px;
+        font-size: 12px;
+        font-weight: bold;
+        border-top: solid 1px rgba(100, 100, 100, .30);
+        text-align: center;
+    }
+
+    .seeAll a {
+        color: #3b5998;
+    }
+
+    .seeAll a:hover {
+        background: #F6F7F8;
+        color: #3b5998;
+        text-decoration: underline;
+    }
+
+
+    /*Timeline Bildirimler */   
+    #divBildirim .bildirimler {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #divBildirim .bildirimler .line {
+        position: absolute;
+        top: 0;
+        left: 27px;
+        bottom: 0;
+        width: 3px;
+        background: #ebebeb;
+    }
+
+    #divBildirim .bildirimler .bildirim {
+        position: relative;
+        z-index: 2;
+        margin: 25px 20px 25px 43px;
+    }
+
+    #divBildirim .bildirimler .bildirim:nth-child(2) {
+        -webkit-animation: here-am-i 0.5s ease-out 0.4s;
+        animation: here-am-i 0.5s ease-out 0.4s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    #divBildirim .bildirimler .bildirim:nth-child(3) {
+        -webkit-animation: here-am-i 0.5s ease-out 0.6s;
+        animation: here-am-i 0.5s ease-out 0.6s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    #divBildirim .bildirimler .bildirim:nth-child(4) {
+        -webkit-animation: here-am-i 0.5s ease-out 0.8s;
+        animation: here-am-i 0.5s ease-out 0.8s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    #divBildirim .bildirimler .bildirim:hover {
+        color: #5F98CD;
+        cursor: pointer;
+    }
+
+    #divBildirim .bildirimler .bildirim .circle {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        height: 11px;
+        width: 11px;
+        background: #fff;
+        border: 2px solid #5F98CD;
+        -webkit-box-shadow: 0 0 0 3px #fff;
+        box-shadow: 0 0 0 3px #fff;
+        border-radius: 6px;
+        top: 0;
+        left: -20px;
+    }
+
+    #divBildirim .bildirimler .bildirim .time {
+        display: block;
+        font-size: 11px;
+        line-height: 11px;
+        margin-bottom: 2px;
+    }
+
+    #divBildirim .bildirimler .bildirim p {
+        font-size: 15px;
+        line-height: 20px;
+        margin: 0;
+    }
+
+    #divBildirim .bildirimler .bildirim p b {
+        font-weight: 600;
+    }
