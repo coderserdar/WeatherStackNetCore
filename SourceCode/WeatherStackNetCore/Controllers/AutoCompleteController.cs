@@ -115,11 +115,13 @@ public class AutoCompleteController : Controller
             if (model.AutoComplete.error != null)
             {
                 ViewBag.MessageType = "error";
-                ViewBag.Message = "Something has gone wrong";
+                ViewBag.BoxType = "large";
+                ViewBag.Message = model.AutoComplete.error.info;
             }
             else
             {
                 ViewBag.MessageType = "success";
+                ViewBag.BoxType = "normal";
                 ViewBag.Message = "Operation is successful";   
             }
             
@@ -133,6 +135,7 @@ public class AutoCompleteController : Controller
             };
 
             ViewBag.MessageType = "error";
+            ViewBag.BoxType = "large";
             ViewBag.Message = "Something has gone wrong";
 
             return View("IndexWithModel", model);

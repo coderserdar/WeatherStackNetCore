@@ -40,19 +40,20 @@
                  success: function (response) {
                      if (response != null)
                      {
-                         Lobibox.notify('success', { size: 'normal', msg: "Operation is successful" });
                          $('#divResult').show();
                          if (response.error === null)
                          {
                              // Fill results with jquery
                              if (response.request.results > 0)
                              {
+                                 Lobibox.notify('success', { size: 'normal', msg: "Operation is successful" });
                                  $("#mainTable").css('visibility','visible');
                                  FillTables(response);
                              }
                              // Fill error information with jquery
                              if (response.success === "false")
                              {
+                                 Lobibox.notify('error', { size: 'large', msg: response.error.info });
                                  $("#errorTable").css('visibility','visible');
                                  FillErrorTable(response);
                              }
@@ -62,6 +63,7 @@
                              // Fill error information with jquery
                              if (response.success === "false")
                              {
+                                 Lobibox.notify('error', { size: 'large', msg: response.error.info });
                                   $("#errorTable").css('visibility','visible');
                                   FillErrorTable(response);
                              }
