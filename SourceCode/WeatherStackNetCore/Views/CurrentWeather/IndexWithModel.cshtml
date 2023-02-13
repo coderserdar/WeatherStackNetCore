@@ -72,7 +72,7 @@
     @if (!string.IsNullOrEmpty(ViewBag.Message))
     {
         <script type="text/javascript" lang="javascript">
-            Lobibox.notify('@ViewBag.MessageType', { size: 'normal', msg: '@ViewBag.Message' });
+            Lobibox.notify('@ViewBag.MessageType', { size: '@ViewBag.BoxType', msg: '@ViewBag.Message' });
         </script>
     }
 </form>

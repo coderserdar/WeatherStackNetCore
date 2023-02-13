@@ -125,11 +125,13 @@ public class CurrentWeatherController : Controller
             if (model.CurrentWeather.error != null)
             {
                 ViewBag.MessageType = "error";
-                ViewBag.Message = "Something has gone wrong";
+                ViewBag.BoxType = "large";
+                ViewBag.Message = model.CurrentWeather.error.info;
             }
             else
             {
                 ViewBag.MessageType = "success";
+                ViewBag.BoxType = "normal";
                 ViewBag.Message = "Operation is successful";   
             }
 
@@ -143,6 +145,7 @@ public class CurrentWeatherController : Controller
             };
 
             ViewBag.MessageType = "error";
+            ViewBag.BoxType = "large";
             ViewBag.Message = "Something has gone wrong";
 
             return View("IndexWithModel", model);
