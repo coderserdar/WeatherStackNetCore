@@ -15,3 +15,15 @@ SourceCode/WeatherStackNetCore/obj/project.assets.json
 SourceCode/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.csproj.AssemblyReference.cache
 SourceCode/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.assets.cache
 SourceCode/WeatherStackNetCore/obj/Debug/net6.0/apphost.exe
+SourceCode/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.assets.cache
+SourceCode/WeatherStackNetCore/obj/Debug/net6.0/WeatherStackNetCore.csproj.AssemblyReference.cache
+SourceCode/WeatherStackNetCore/obj/project.assets.json
+SourceCode/WeatherStackNetCore/obj/project.nuget.cache
+SourceCode/WeatherStackNetCore/obj/project.packagespec.json
+SourceCode/WeatherStackNetCore/obj/rider.project.restore.info
+SourceCode/WeatherStackNetCore/obj/WeatherStackNetCore.csproj.nuget.dgspec.json
+SourceCode/WeatherStackNetCore/obj/WeatherStackNetCore.csproj.nuget.g.props
+*.cache
+*.json
+*.info
+*.props
