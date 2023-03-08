@@ -58,20 +58,7 @@ public class AutoCompleteController : Controller
     {
         try
         {
-            var apiKey = _configuration.GetValue<string>("API_Key"); 
-        
-            var httpClient = new HttpClient();
-            httpClient.Timeout = new TimeSpan(0, 0, 30);
-        
-            var requestString = "http://api.weatherstack.com/" + $"autocomplete?access_key={apiKey}&query={placeName}";
-       
-            var response = await httpClient.GetAsync(requestString);
-            var result = await response.Content.ReadAsStringAsync();
-
-            var serializer = new DataContractJsonSerializer(typeof(AutoComplete));
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-            var autoComplete = (AutoComplete)serializer.ReadObject(memoryStream)!;
-
+            var autoComplete = await CallAutoCompleteFromAPI(placeName);
             return autoComplete;
         }
         catch (Exception e)
@@ -93,19 +80,8 @@ public class AutoCompleteController : Controller
         try
         {
             if (!ModelState.IsValid) return View("IndexWithModel", model);
-            var apiKey = _configuration.GetValue<string>("API_Key"); 
-        
-            var httpClient = new HttpClient();
-            httpClient.Timeout = new TimeSpan(0, 0, 30);
-        
-            var requestString = "http://api.weatherstack.com/" + $"autocomplete?access_key={apiKey}&query={model.PlaceName}";
-        
-            var response = await httpClient.GetAsync(requestString);
-            var result = await response.Content.ReadAsStringAsync();
-
-            var serializer = new DataContractJsonSerializer(typeof(AutoComplete));
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-            var autoComplete = (AutoComplete)serializer.ReadObject(memoryStream)!;
+            
+            var autoComplete = await CallAutoCompleteFromAPI(model.PlaceName);
 
             model = new AutoCompleteViewModel
             {
@@ -113,17 +89,9 @@ public class AutoCompleteController : Controller
             };
             
             if (model.AutoComplete.error != null)
-            {
-                ViewBag.MessageType = "error";
-                ViewBag.BoxType = "large";
-                ViewBag.Message = model.AutoComplete.error.info;
-            }
+                SetErrorMessage(model.AutoComplete.error.info);
             else
-            {
-                ViewBag.MessageType = "success";
-                ViewBag.BoxType = "normal";
-                ViewBag.Message = "Operation is successful";   
-            }
+                SetSuccessMessage();
             
             return View("IndexWithModel", model);
         }
@@ -134,11 +102,54 @@ public class AutoCompleteController : Controller
                 AutoComplete = null
             };
 
-            ViewBag.MessageType = "error";
-            ViewBag.BoxType = "large";
-            ViewBag.Message = "Something has gone wrong";
+            SetErrorMessage("Something has gone wrong");
 
             return View("IndexWithModel", model);
         }
+    }
+
+    /// <summary>
+    /// This method is used to set success message to ViewBag
+    /// </summary>
+    private void SetSuccessMessage()
+    {
+        ViewBag.MessageType = "success";
+        ViewBag.BoxType = "normal";
+        ViewBag.Message = "Operation is successful";
+    }
+    
+    /// <summary>
+    /// This method is used to set error message to ViewBag
+    /// </summary>
+    /// <param name="errorMessage">Specific Error Message</param>
+    private void SetErrorMessage(string errorMessage)
+    {
+        ViewBag.MessageType = "error";
+        ViewBag.BoxType = "large";
+        ViewBag.Message = errorMessage;
+    }
+
+    /// <summary>
+    /// This method is used to call WeatherStack API with place name
+    /// And get the city info
+    /// </summary>
+    /// <param name="placeName">Place Name</param>
+    /// <returns>Auto Complete Data (City etc. Data)</returns>
+    private async Task<AutoComplete> CallAutoCompleteFromAPI(string? placeName)
+    {
+        var apiKey = _configuration.GetValue<string>("API_Key");
+
+        var httpClient = new HttpClient();
+        httpClient.Timeout = new TimeSpan(0, 0, 30);
+
+        var requestString = "http://api.weatherstack.com/" + $"autocomplete?access_key={apiKey}&query={placeName}";
+
+        var response = await httpClient.GetAsync(requestString);
+        var result = await response.Content.ReadAsStringAsync();
+
+        var serializer = new DataContractJsonSerializer(typeof(AutoComplete));
+        var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+        var autoComplete = (AutoComplete) serializer.ReadObject(memoryStream)!;
+        return autoComplete;
     }
 }

@@ -60,24 +60,7 @@ public class CurrentWeatherController : Controller
     {
         try
         {
-            var apiKey = _configuration.GetValue<string>("API_Key"); 
-        
-            var httpClient = new HttpClient();
-            httpClient.Timeout = new TimeSpan(0, 0, 30);
-        
-            var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={placeName}";
-            if (!string.IsNullOrEmpty(unit))
-                requestString += $"&unit={unit}";
-            if (!string.IsNullOrEmpty(language))
-                requestString += $"&language={language}";
-        
-            var response = await httpClient.GetAsync(requestString);
-            var result = await response.Content.ReadAsStringAsync();
-
-            var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-            var currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
-
+            var currentWeather = await GetCurrentWeatherFromAPI(placeName, unit, language);
             return currentWeather;
         }
         catch (Exception e)
@@ -99,23 +82,8 @@ public class CurrentWeatherController : Controller
         try
         {
             if (!ModelState.IsValid) return View("IndexWithModel", model);
-            var apiKey = _configuration.GetValue<string>("API_Key"); 
-        
-            var httpClient = new HttpClient();
-            httpClient.Timeout = new TimeSpan(0, 0, 30);
-        
-            var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={model.PlaceName}";
-            if (!string.IsNullOrEmpty(model.Unit))
-                requestString += $"&unit={model.Unit}";
-            if (!string.IsNullOrEmpty(model.Language))
-                requestString += $"&language={model.Language}";
-        
-            var response = await httpClient.GetAsync(requestString);
-            var result = await response.Content.ReadAsStringAsync();
-
-            var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
-            var currentWeather = (CurrentWeather)serializer.ReadObject(memoryStream)!;
+            
+            var currentWeather = await GetCurrentWeatherFromAPI(model.PlaceName, model.Unit, model.Language);
 
             model = new CurrentWeatherViewModel
             {
@@ -123,18 +91,10 @@ public class CurrentWeatherController : Controller
             };
             
             if (model.CurrentWeather.error != null)
-            {
-                ViewBag.MessageType = "error";
-                ViewBag.BoxType = "large";
-                ViewBag.Message = model.CurrentWeather.error.info;
-            }
+                SetErrorMessage(model.CurrentWeather.error.info);
             else
-            {
-                ViewBag.MessageType = "success";
-                ViewBag.BoxType = "normal";
-                ViewBag.Message = "Operation is successful";   
-            }
-
+                SetSuccessMessage();
+            
             return View("IndexWithModel", model);
         }
         catch (Exception e)
@@ -144,11 +104,61 @@ public class CurrentWeatherController : Controller
                 CurrentWeather = null
             };
 
-            ViewBag.MessageType = "error";
-            ViewBag.BoxType = "large";
-            ViewBag.Message = "Something has gone wrong";
+            SetErrorMessage("Something has gone wrong");
 
             return View("IndexWithModel", model);
         }
+    }
+    
+    /// <summary>
+    /// This method is used to set success message to ViewBag
+    /// </summary>
+    private void SetSuccessMessage()
+    {
+        ViewBag.MessageType = "success";
+        ViewBag.BoxType = "normal";
+        ViewBag.Message = "Operation is successful";
+    }
+    
+    /// <summary>
+    /// This method is used to set error message to ViewBag
+    /// </summary>
+    /// <param name="errorMessage">Specific Error Message</param>
+    private void SetErrorMessage(string errorMessage)
+    {
+        ViewBag.MessageType = "error";
+        ViewBag.BoxType = "large";
+        ViewBag.Message = errorMessage;
+    }
+    
+    /// <summary>
+    /// This method is used to get Current Weather Info from Weather Stack API
+    /// And return the result
+    /// </summary>
+    /// <param name="placeName">Place Name Info</param>
+    /// <param name="unit">Unit Info</param>
+    /// <param name="language">Language Info</param>
+    /// <returns></returns>
+    private async Task<CurrentWeather> GetCurrentWeatherFromAPI(string placeName, string unit, string language)
+    {
+        var apiKey = _configuration.GetValue<string>("API_Key");
+
+        var httpClient = new HttpClient();
+        httpClient.Timeout = new TimeSpan(0, 0, 30);
+
+        var requestString = "http://api.weatherstack.com/" + $"current?access_key={apiKey}&query={placeName}";
+        if (!string.IsNullOrEmpty(unit))
+            requestString += $"&unit={unit}";
+        if (!string.IsNullOrEmpty(language))
+            requestString += $"&language={language}";
+
+        var response = await httpClient.GetAsync(requestString);
+        var result = await response.Content.ReadAsStringAsync();
+
+        var serializer = new DataContractJsonSerializer(typeof(CurrentWeather));
+        var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+        var currentWeather = (CurrentWeather) serializer.ReadObject(memoryStream)!;
+
+        return currentWeather;
     }
 }
