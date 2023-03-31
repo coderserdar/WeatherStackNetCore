@@ -27,3 +27,8 @@ SourceCode/WeatherStackNetCore/obj/WeatherStackNetCore.csproj.nuget.g.props
 *.json
 *.info
 *.props
+SourceCode/WeatherStackNetCore/obj/project.assets.json
+SourceCode/WeatherStackNetCore/obj/project.nuget.cache
+SourceCode/WeatherStackNetCore/obj/project.packagespec.json
+SourceCode/WeatherStackNetCore/obj/rider.project.restore.info
+SourceCode/WeatherStackNetCore/obj/WeatherStackNetCore.csproj.nuget.dgspec.json
