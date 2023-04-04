@@ -47,6 +47,11 @@ C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCo
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.RazorAssemblyInfo.cache
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.RazorAssemblyInfo.cs
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets\msbuild.WeatherStackNetCore.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets\msbuild.build.WeatherStackNetCore.props
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WeatherStackNetCore.props
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WeatherStackNetCore.props
+C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -58,8 +63,3 @@ C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCo
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.pdb
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\WeatherStackNetCore.genruntimeconfig.cache
 C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\ref\WeatherStackNetCore.dll
-C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets\msbuild.WeatherStackNetCore.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets\msbuild.build.WeatherStackNetCore.props
-C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WeatherStackNetCore.props
-C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WeatherStackNetCore.props
-C:\Users\serda\Documents\GitHub\WeatherStackNetCore\SourceCode\WeatherStackNetCore\obj\Debug\net6.0\staticwebassets.pack.json

@@ -13,7 +13,7 @@ public class AutoCompleteViewModel
 
     [Required(ErrorMessage = "Please Enter A Place Name")]
     [Display(Name = "Place Name:")]
-    public string? PlaceName { get; init; }
+    public string? PlaceName { get; set; }
     
     public AutoComplete? AutoComplete { get; init; }
 

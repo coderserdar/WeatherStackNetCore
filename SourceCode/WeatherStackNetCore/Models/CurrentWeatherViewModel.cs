@@ -14,7 +14,7 @@ public class CurrentWeatherViewModel
     [StringLength(60, MinimumLength = 3)]
     [Required(ErrorMessage = "Please Enter A Place Name")]
     [Display(Name = "Place Name:")]
-    public string? PlaceName { get; init; }
+    public string? PlaceName { get; set; }
 
     [Display(Name = "Unit:")] public string? Unit { get; init; }
 
