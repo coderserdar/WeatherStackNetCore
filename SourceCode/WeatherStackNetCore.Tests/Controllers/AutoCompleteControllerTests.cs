@@ -4,7 +4,7 @@ using Moq;
 using WeatherStackNetCore.Controllers;
 using WeatherStackNetCore.Models;
 
-namespace WeatherStackNetCore.Tests;
+namespace WeatherStackNetCore.Tests.Controllers;
 
 public class AutoCompleteControllerTests
 {
