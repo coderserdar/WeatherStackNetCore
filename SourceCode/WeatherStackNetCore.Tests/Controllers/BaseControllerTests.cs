@@ -1,7 +1,5 @@
-using Microsoft.Extensions.Configuration;
 using Moq;
 using WeatherStackNetCore.Controllers;
-using WeatherStackNetCore.Models;
 
 namespace WeatherStackNetCore.Tests.Controllers;
 
