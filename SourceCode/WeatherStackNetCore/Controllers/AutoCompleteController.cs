@@ -75,11 +75,12 @@ public class AutoCompleteController : Controller
     /// <param name="model">Location Search Page Elements</param>
     /// <returns>Result Page</returns>
     [HttpPost]
+    [ValidateModel]
     public async Task<IActionResult> GetLocationsWithModel(AutoCompleteViewModel model)
     {
         try
         {
-            if (!ModelState.IsValid) return View("IndexWithModel", model);
+            // if (!ModelState.IsValid) return View("IndexWithModel", model);
             
             var autoComplete = await CallAutoCompleteFromAPI(model.PlaceName);
 

@@ -77,11 +77,12 @@ public class CurrentWeatherController : Controller
     /// <param name="model">Current Weather Search Page Elements</param>
     /// <returns>Result Page</returns>
     [HttpPost]
+    [ValidateModel]
     public async Task<IActionResult> GetCurrentWeatherWithModel(CurrentWeatherViewModel model)
     {
         try
         {
-            if (!ModelState.IsValid) return View("IndexWithModel", model);
+            // if (!ModelState.IsValid) return View("IndexWithModel", model);
             
             var currentWeather = await GetCurrentWeatherFromAPI(model.PlaceName, model.Unit, model.Language);
 
