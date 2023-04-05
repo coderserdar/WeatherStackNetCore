@@ -12,7 +12,7 @@ public class BaseController : Controller
     /// <summary>
     /// This method is used to set success message to ViewBag
     /// </summary>
-    protected void SetSuccessMessage()
+    public void SetSuccessMessage()
     {
         ViewBag.MessageType = "success";
         ViewBag.BoxType = "normal";
@@ -23,7 +23,7 @@ public class BaseController : Controller
     /// This method is used to set error message to ViewBag
     /// </summary>
     /// <param name="errorMessage">Specific Error Message</param>
-    protected void SetErrorMessage(string errorMessage)
+    public void SetErrorMessage(string errorMessage)
     {
         ViewBag.MessageType = "error";
         ViewBag.BoxType = "large";
