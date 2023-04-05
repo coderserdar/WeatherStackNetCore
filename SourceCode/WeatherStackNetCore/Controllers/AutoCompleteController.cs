@@ -10,7 +10,7 @@ namespace WeatherStackNetCore.Controllers;
 /// This controller is used to
 /// Call API function which is about location searching
 /// </summary>
-public class AutoCompleteController : Controller
+public class AutoCompleteController : BaseController
 {
     /// <summary>
     /// Config element
@@ -107,27 +107,6 @@ public class AutoCompleteController : Controller
 
             return View("IndexWithModel", model);
         }
-    }
-
-    /// <summary>
-    /// This method is used to set success message to ViewBag
-    /// </summary>
-    private void SetSuccessMessage()
-    {
-        ViewBag.MessageType = "success";
-        ViewBag.BoxType = "normal";
-        ViewBag.Message = "Operation is successful";
-    }
-    
-    /// <summary>
-    /// This method is used to set error message to ViewBag
-    /// </summary>
-    /// <param name="errorMessage">Specific Error Message</param>
-    private void SetErrorMessage(string errorMessage)
-    {
-        ViewBag.MessageType = "error";
-        ViewBag.BoxType = "large";
-        ViewBag.Message = errorMessage;
     }
 
     /// <summary>
